@@ -53,6 +53,27 @@
     /* Hero overlay for readability */
     .hero-wrap{position:relative;}
     .hero-wrap>*{position:relative;z-index:1;}
+
+    /* Vollbreiter Sticky-Button nur auf Mobile */
+  .float-cta {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: var(--gradient);
+    color: #fff;
+    font-weight: 600;
+    padding: 1rem 0;               /* 16 px hoch */
+    text-align: center;
+    transform: translateY(100%);    /* erst mal versteckt */
+    transition: transform 0.25s ease;
+    z-index: 80;
+  }
+  .float-cta.show { transform: translateY(0); }
+
+  @media (min-width: 768px) {
+    .float-cta { display: none; }   /* Desktop ausblenden */
+  }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased scroll-smooth">
@@ -68,8 +89,6 @@
       <a href="#formular" class="btn-brand btn-white" id="cta-hero" onclick="gtag('event','generate_lead',{method:'hero_cta'});">Jetzt kostenlos starten</a>
       <p class="mt-4 text-sm">Keine Kreditkarte • Jederzeit kündbar</p>
     </div>
-    <!-- Sticky CTA (mobile only) -->
-    <a href="#formular" class="btn-brand sticky-cta md:hidden" onclick="gtag('event','generate_lead',{method:'sticky_cta'});">Starten</a>
   </header>
 
   <!-- ===== TRUST BELT ===== -->
@@ -279,5 +298,30 @@
       gtag('event','view_item',{item_id:'calculator',value:diffYear});
     });
   </script>
+<script>
+  // Hero-Observer für Mobile-CTA
+  const floatCta = document.getElementById('floatCta');
+  const hero     = document.querySelector('header');   // dein Hero-Tag
+
+  const io = new IntersectionObserver(
+    ([entry]) => {
+      // Wenn Hero zu < 10 % sichtbar ist → Button anzeigen
+      if (entry.intersectionRatio < 0.1) {
+        floatCta.classList.add('show');
+      } else {
+        floatCta.classList.remove('show');
+      }
+    },
+    { threshold: [0.1] }
+  );
+  io.observe(hero);
+</script>
+      <!-- FLOATY CTA (ersetzt deine bisherige sticky-cta) -->
+<a href="#formular"
+   id="floatCta"
+   class="float-cta"
+   onclick="gtag('event','generate_lead',{method:'float_cta'});">
+  Jetzt kostenlos starten
+</a>
 </body>
 </html>
