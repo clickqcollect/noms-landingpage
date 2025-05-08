@@ -3,347 +3,239 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Noms – 5 €-Festpreis-Lieferung ohne Provision</title>
-  <!-- Google Tag (GA4) – ID ersetzen -->
+  <title>Noms – 0 % Provision, volle Marge</title>
+
+  <!-- Tailwind CDN for rapid prototyping -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Tag (GA4) – Property ID ersetzen -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX', { send_page_view: true });
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','G-XXXXXXX',{send_page_view:true});
   </script>
+
   <style>
-    /* =====================
-       Farben & Globals
-       ===================== */
+    /* ================= BRAND COLORS & UTILITIES ================ */
     :root {
-      /* Primärfarbverlauf */
-      --primary1: #ffa067;
-      --primary2: #ff386a;
-      --primary3: #d727e0;
-      --gradient: linear-gradient(135deg, var(--primary1) 0%, var(--primary2) 50%, var(--primary3) 100%);
-
-      --dark: #222;
-      --gray: #fafafa;
-      --radius: 10px;
-      --shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      --primary-1:#ffa067;
+      --primary-2:#ff386a;
+      --primary-3:#d727e0;
+      --gradient:linear-gradient(90deg,var(--primary-1) 0%,var(--primary-2) 50%,var(--primary-3) 100%);
     }
 
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-        Arial, sans-serif;
+    /* Gradient background utility */
+    .brand-gradient{background-image:var(--gradient);}
+
+    /* Accent headline */
+    .headline{color:var(--primary-2);} /* #ff386a */
+
+    /* Brand button */
+    .btn-brand{
+      background-image:var(--gradient);
+      color:#fff;
+      padding:0.75rem 1.75rem; /* 12px 28px */
+      font-weight:600;
+      border-radius:0.5rem; /* rounded-lg */
+      display:inline-block;
+      transition:transform 0.15s ease, box-shadow 0.15s ease;
     }
+    .btn-brand:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15);}    
 
-    body {
-      color: var(--dark);
-      line-height: 1.5;
-      background: #fff;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    /* Mobile sticky CTA */
+    .sticky-cta{position:fixed;bottom:1.25rem;right:1rem;z-index:50;}
 
-    header,
-    section,
-    footer {
-      padding: 40px 4%; /* mobile-first */
-    }
-
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-      margin: 2rem 0 1rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .btn {
-      background: var(--gradient);
-      color: #fff;
-      padding: 14px 26px;
-      border: none;
-      font-size: 1rem;
-      border-radius: var(--radius);
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      width: 100%; /* Mobile: volle Breite */
-      max-width: 280px;
-      text-align: center;
-      transition: transform 0.15s ease;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn.sticky {
-      position: fixed;
-      bottom: 16px;
-      right: 16px;
-      z-index: 9999;
-    }
-
-    /* ============ HERO ============ */
-    .hero {
-      background: url("hero.jpg") center/cover no-repeat;
-      background-blend-mode: multiply;
-      position: relative;
-      min-height: 70vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-left: 4%;
-      color: #fff;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-      overflow: hidden;
-    }
-    /* semi-transparent gradient overlay */
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--gradient);
-      opacity: 0.75;
-      z-index: 0;
-    }
-    .hero > * { position: relative; z-index: 1; }
-
-    .hero h1 {
-      font-size: 2.2rem;
-    }
-
-    .logo {
-      height: 40px;
-      width: auto;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,.3));
-    }
-
-    /* ============ LAYOUT HELPERS ============ */
-    .flex {
-      display: flex;
-      flex-direction: column; /* Mobile-First */
-      gap: 24px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 24px;
-      flex: 1 1 260px;
-    }
-
-    .feature-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .pricing-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-      margin-top: 1rem;
-    }
-
-    .pricing-table th,
-    .pricing-table td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: 600;
-      padding: 10px;
-      background: var(--gray);
-      margin-bottom: 5px;
-      border-radius: 4px;
-    }
-
-    .faq details {
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background: var(--dark);
-      color: #fff;
-      text-align: center;
-    }
-
-    /* =====================
-       Medienabfrage Desktop
-       ===================== */
-    @media (min-width: 768px) {
-      header,
-      section,
-      footer {
-        padding: 60px 5%;
-      }
-
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      .btn {
-        width: auto; /* Desktop: nur so breit wie nötig */
-      }
-
-      .hero {
-        min-height: 90vh;
-      }
-
-      .hero h1 {
-        font-size: 3rem;
-      }
-
-      .flex {
-        flex-direction: row;
-      }
-
-      .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-
-      .pricing-table {
-        font-size: 1rem;
-      }
-    }
+    /* Hero overlay for readability */
+    .hero-wrap{position:relative;}
+    .hero-wrap>*{position:relative;z-index:1;}
   </style>
 </head>
-<body>
-  <!-- Hero Section -->
-  <header class="hero">
-    <img src="nomslogo.png" alt="Noms Logo" class="logo" />
-    <h1>5 €-Festpreis-Lieferung – <br />0 % Provision für Dein Restaurant</h1>
-    <p>
-      Starte jetzt kostenlos bis Oktober 2025 & spare durchschnittlich 18.000 €
-      pro Jahr gegenüber Plattformen mit 30 % Provision.citeturn1file1
-    </p>
-    <a
-      href="#formular"
-      class="btn"
-      id="cta-demo"
-      onclick="gtag('event','generate_lead',{method:'hero_cta'});"
-      >Kostenlos anmelden</a
-    >
+<body class="bg-gray-50 text-gray-900 antialiased scroll-smooth">
+  <!-- ================== HERO ================== -->
+  <header class="brand-gradient text-white pt-20 pb-24 px-4">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <!-- Logo -->
+      <div class="inline-flex items-center justify-center h-20 w-20 mx-auto mb-4 bg-white rounded-2xl shadow-lg">
+        <img src="nomslogo.png" alt="noms logo" class="h-14 w-14 object-contain" />
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">0 % Provision.<br/>Festpreis 149 €/Monat.<br/>5 € pro Lieferung.</h1>
+      <p class="text-lg md:text-2xl font-medium">Mach mehr Gewinn pro Bestellung – in 5 Minuten einsatzbereit.</p>
+      <a href="#formular" class="btn-brand" id="cta-hero" onclick="gtag('event','generate_lead',{method:'hero_cta'});">Jetzt kostenlos starten</a>
+      <p class="mt-4 text-sm">Keine Kreditkarte • Jederzeit kündbar</p>
+    </div>
+    <!-- Sticky CTA (mobile only) -->
+    <a href="#formular" class="btn-brand sticky-cta md:hidden" onclick="gtag('event','generate_lead',{method:'sticky_cta'});">Starten</a>
   </header>
 
-  <!-- Sticky CTA -->
-  <a
-    href="#formular"
-    class="btn sticky"
-    onclick="gtag('event','generate_lead',{method:'sticky_cta'});"
-    >Jetzt anmelden</a
-  >
-
-  <!-- Social Proof -->
-  <section>
-    <div class="flex" style="align-items: center; justify-content: center">
-      <img src="logo1.png" alt="Restaurant 1" style="height: 40px" />
-      <img src="logo2.png" alt="Restaurant 2" style="height: 40px" />
-      <img src="logo3.png" alt="Restaurant 3" style="height: 40px" />
-      <img src="logo4.png" alt="Restaurant 4" style="height: 40px" />
+  <!-- ================= SOCIAL PROOF (Logos) ================= -->
+  <section class="py-10 px-4 bg-white">
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-10 opacity-80">
+      <img src="/logos/stripe.svg" alt="Stripe" class="h-10"/>
+      <img src="/logos/google.svg" alt="Google" class="h-10"/>
+      <img src="/logos/uber_eats.svg" alt="Integration" class="h-10"/>
+      <img src="/logos/dhl.svg" alt="DHL" class="h-10"/>
     </div>
-    <p style="text-align: center; margin-top: 10px">
-      <em
-        >Restaurants wie Mozzarella &amp; Pomodoro setzen bereits auf Noms und
-        steigerten ihren Gewinn signifikant.citeturn1file0</em
-      >
-    </p>
+    <p class="text-center mt-6 text-sm text-gray-600">Vertraut von Gastronom:innen in ganz Deutschland</p>
   </section>
 
-  <!-- Pain vs Solution -->
-  <section style="background: var(--gray)">
-    <h2>Was Dich Provisionen wirklich kosten</h2>
-    <table class="pricing-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Provisionsplattform (30 %)</th>
-          <th>Noms</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Monatlicher Umsatz</td>
-          <td>5.000 €</td>
-          <td>5.000 €</td>
-        </tr>
-        <tr>
-          <td>Provision / Festpreis</td>
-          <td>1.500 €</td>
-          <td>149 €</td>
-        </tr>
-        <tr>
-          <td>Lieferkosten Restaurant*</td>
-          <td></td>
-          <td>500 € (5 € × 100 Bestellungen)</td>
-        </tr>
-        <tr style="font-weight: 600">
-          <td>Ersparnis</td>
-          <td colspan="2">851 € pro Monat → 10.212 € pro Jahr</td>
-        </tr>
-      </tbody>
-    </table>
-    <small>* zzgl. Zahlungsgebühren</small>
-  </section>
-
-  <!-- How It Works -->
-  <section>
-    <h2>In 3 einfachen Schritten live</h2>
-    <div class="flex">
-      <div class="card">
-        <h3>1 | Registrieren</h3>
-        <p>Formular ausfüllen & Zugang erhalten – keine Kreditkarte nötig.</p>
+  <!-- ================= PAIN VS. SOLUTION ================= -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+      <!-- Pain Copy -->
+      <div class="space-y-5">
+        <h2 class="headline text-3xl font-bold">Jeder 3.&nbsp;Teller? Verschenkt.</h2>
+        <p>Lieferplattformen schlucken <strong>30 % Provision</strong>. Bei nur 100 Bestellungen × 50 € sind das <strong>1.500 €</strong> pro Monat.</p>
+        <p class="font-semibold">Mit <span class="font-bold">noms</span> bleibt das Geld bei dir.</p>
       </div>
-      <div class="card">
-        <h3>2 | In der App erscheinen</h3>
-        <p>
-          Wir listen Dein Restaurant in unserer Marketplace-App & verbinden auf
-          Wunsch Dein POS.
-        </p>
-      </div>
-      <div class="card">
-        <h3>3 | Bestellungen kassieren</h3>
-        <p>
-          Kunden bestellen, unser Fahrer-Netzwerk liefert, Du behältst den vollen
-          Bestellwert.
-        </p>
+      <!-- Comparison Table -->
+      <div class="bg-white rounded-2xl shadow-lg p-6">
+        <h3 class="font-semibold mb-4 text-center">Kostenvergleich / Monat</h3>
+        <table class="w-full text-base md:text-lg">
+          <thead class="border-b">
+            <tr class="text-center">
+              <th class="py-3">Bestellungen</th>
+              <th class="py-3">30 % Provision</th>
+              <th class="py-3 text-emerald-600">noms effektiv</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b text-center">
+              <td class="py-3">100</td><td class="py-3">30 %</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">≈ 22 %</td>
+            </tr>
+            <tr class="border-b bg-gray-50 text-center">
+              <td class="py-3">500</td><td class="py-3">30 %</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">≈ 18 %</td>
+            </tr>
+            <tr class="border-b text-center">
+              <td class="py-3">1 000</td><td class="py-3">30 %</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">≈ 17 %</td>
+            </tr>
+            <tr class="bg-gray-50 text-center">
+              <td class="py-3">2 000</td><td class="py-3">30 %</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">≈ 17 %</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-xs mt-3 text-gray-500 text-center">Basis: 149 €/Monat + 5 €/Lieferung, Ø‑Warenkorb 30 €</p>
       </div>
     </div>
   </section>
 
-  <!-- Feature Grid -->
-  <section style="background: var(--gray)">
-    <h2>WarumRestaurants Noms lieben</h2>
-    <div class="feature-grid">
-      <div class="card">
-        <h3>5 €-Festpreis-Lieferung</h3>
-        <p>
-          Unabhängig vom Bestellwert & deutschlandweit verfügbar.citeturn1file1
-        </p>
+  <!-- ================= HOW IT WORKS ================= -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-5xl mx-auto text-center space-y-12">
+      <h2 class="headline text-3xl font-bold">In 3 Schritten live</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left md:text-center">
+        <div class="p-6 bg-gray-100 rounded-xl shadow-sm space-y-2"><h3 class="font-semibold text-lg">1 | Registrieren</h3><p>Formular ausfüllen & Dashboard-Zugang erhalten – keine Kreditkarte nötig.</p></div>
+        <div class="p-6 bg-gray-100 rounded-xl shadow-sm space-y-2"><h3 class="font-semibold text-lg">2 | In der App erscheinen</h3><p>Wir listen dein Restaurant in unserer Marketplace‑App & verbinden auf Wunsch dein POS.</p></div>
+        <div class="p-6 bg-gray-100 rounded-xl shadow-sm space-y-2"><h3 class="font-semibold text-lg">3 | Bestellungen kassieren</h3><p>Kunden bestellen, unser Fahrer‑Netzwerk liefert – du behältst den vollen Bestellwert.</p></div>
       </div>
-      <div class="card">
-        <h3>Monats-Flatrate statt Provision</
+    </div>
+  </section>
+
+  <!-- ================= FEATURE GRID ================= -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto text-center space-y-12">
+      <h2 class="headline text-3xl font-bold">Warum Restaurants Noms lieben</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-left">
+        <div class="p-6 bg-white rounded-xl shadow-sm"><h3 class="font-semibold mb-2">💶 Fixe Flat-Fee</h3><p>149 € Grundgebühr – transparente Kosten, volle Marge.</p></div>
+        <div class="p-6 bg-white rounded-xl shadow-sm"><h3 class="font-semibold mb-2">📊 Volle Kundendaten</h3><p>Datenbesitz-Garantie – du baust deine Stammkundschaft auf, nicht die Plattform.</p></div>
+        <div class="p-6 bg-white rounded-xl shadow-sm"><h3 class="font-semibold mb-2">⚡️ In 24 h live</h3><p>Anmeldung heute, Bestellungen morgen – super-schnelles Onboarding.</p></div>
+        <div class="p-6 bg-white rounded-xl shadow-sm"><h3 class="font-semibold mb-2">🔄 Automatisches Marketing</h3><p>Segmentierte E‑Mails & SMS steigern Wiederbestellungen um bis zu 60 %.</p></div>
+        <div class="p-6 bg-white rounded-xl shadow-sm"><h3 class="font-semibold mb-2">🚚 5 € Festpreis-Lieferung</h3><p>Unabhängig vom Bestellwert & deutschlandweit verfügbar.</p></div>
+        <div class="p-6 bg-white rounded-xl shadow-sm"><h3 class="font-semibold mb-2">🏆 Geld-zurück-Garantie</h3><p>Verdienst du in 2 Monaten weniger als du zahlst, erstatten wir 100 %.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SAVINGS CALCULATOR (interactive) ================= -->
+  <section class="py-16 px-4 bg-white" id="calculator">
+    <div class="max-w-3xl mx-auto text-center space-y-8">
+      <h2 class="headline text-3xl font-bold">Wie viel sparst du wirklich?</h2>
+      <div class="grid md:grid-cols-3 gap-4 items-end">
+        <div>
+          <label class="block text-sm font-medium mb-1">Bestellungen / Monat</label>
+          <input type="number" id="orders" value="100" min="1" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-center">
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">Ø Bestellwert (€)</label>
+          <input type="number" id="orderValue" value="50" min="1" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-center">
+        </div>
+        <div>
+          <button id="calcBtn" class="btn-brand w-full">Sparen berechnen</button>
+        </div>
+      </div>
+      <div id="result" class="text-lg font-medium mt-6 hidden"></div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIAL ================= -->
+  <section class="bg-gray-50 py-16 px-4">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <p class="text-xl font-medium">„noms hat uns in der ersten Woche 850 € gespart – ohne Extra-Arbeit.“</p>
+      <p class="font-semibold">Mozzarella & Pomodoro, Berlin</p>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="py-16 px-4 bg-white">
+    <div class="max-w-3xl mx-auto space-y-8">
+      <h2 class="headline text-3xl font-bold text-center">Häufige Fragen</h2>
+      <details class="p-4 bg-gray-50 rounded-lg">
+        <summary class="font-semibold cursor-pointer">Brauche ich eigene Fahrer?</summary>
+        <p class="mt-2">Nein. Unser Netzwerk übernimmt Lieferung bundesweit für 5 € fix.</p>
+      </details>
+      <details class="p-4 bg-gray-50 rounded-lg">
+        <summary class="font-semibold cursor-pointer">Welche Vertragsbindung habe ich?</summary>
+        <p class="mt-2">Monatlich kündbar – ohne Gebühren. Kündigungs-Garantie.</p>
+      </details>
+      <details class="p-4 bg-gray-50 rounded-lg">
+        <summary class="font-semibold cursor-pointer">Wie lange dauert die Einrichtung?</summary>
+        <p class="mt-2">In der Regel bist du in weniger als 24 Stunden live.</p>
+      </details>
+      <details class="p-4 bg-gray-50 rounded-lg">
+        <summary class="font-semibold cursor-pointer">Wie erhalte ich mein Geld?</summary>
+        <p class="mt-2">Zahlungen laufen direkt auf dein Konto; wir behalten keine Provision.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ================= SECONDARY CTA ================= -->
+  <section class="py-20 brand-gradient text-white text-center px-4">
+    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Spare ab der ersten Bestellung – starte jetzt kostenlos.</h2>
+    <a href="#formular" class="bg-white text-[#ff386a] font-semibold px-12 py-4 rounded-full shadow-lg hover:shadow-xl transition">Jetzt kostenlos starten</a>
+    <p class="mt-3 text-sm">Ohne Kreditkarte • Sofort kündbar</p>
+  </section>
+
+  <!-- ================= SIGNUP FORM PLACEHOLDER ================= -->
+  <section id="formular" class="py-16 px-4 bg-gray-50 text-center">
+    <h2 class="headline text-3xl font-bold mb-6">Anmeldeformular</h2>
+    <!-- ➜ Hier echtes Embed oder iFrame einsetzen -->
+    <p class="text-gray-600">Dein Formular kommt hier hin – keine Kreditkarte erforderlich!</p>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-10 text-center text-xs bg-gray-900 text-gray-400">
+    © 2025 ClickQ & Collect GmbH • christopher@getnoms.app • 015679 01 10 01
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // Savings calculator logic
+    document.getElementById('calcBtn').addEventListener('click',()=>{
+      const orders=parseFloat(document.getElementById('orders').value)||0;
+      const value=parseFloat(document.getElementById('orderValue').value)||0;
+      if(orders<=0||value<=0){alert('Bitte gültige Werte eingeben');return;}
+      const commissionMonth=orders*value*0.30;
+      const nomsMonth=149+orders*5;
+      const commissionYear=commissionMonth*12;
+      const nomsYear=nomsMonth*12;
+      const diffYear=commissionYear-nomsYear;
+      const res=document.getElementById('result');
+      res.classList.remove('hidden');
+      res.innerHTML=`<div class='text-lg'>\
+        <strong>Jährliche Plattformkosten:</strong> ${commissionYear.toLocaleString('de-DE',{style:'currency',currency:'EUR'})}<br>\
+        <strong>Jährliche Noms-Kosten:</strong> ${nomsYear.toLocaleString('de-DE',{style:'currency',currency:'EUR'})}\
+        </div><div class='mt-4 text-2xl font-extrabold text-emerald-600'>Du sparst ${diffYear.toLocaleString('de-DE',{style:'currency',currency:'EUR'})} pro Jahr!</div>`;
+      gtag('event','view_item',{item_id:'calculator',value:diffYear});
+    });
+  </script>
+</body>
+</html>
