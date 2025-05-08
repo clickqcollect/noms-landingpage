@@ -42,6 +42,11 @@
     }
     .btn-brand:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15);}    
 
+    .btn-white {
+      background: #fff;
+      color: #000;
+    }
+
     /* Mobile sticky CTA */
     .sticky-cta{position:fixed;bottom:1.25rem;right:1rem;z-index:50;}
 
@@ -60,7 +65,7 @@
       </div>
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">0 % Provision.<br/>Festpreis 149 €/Monat.<br/>5 € pro Lieferung.</h1>
       <p class="text-lg md:text-2xl font-medium">Mach mehr Gewinn pro Bestellung – in 5 Minuten einsatzbereit.</p>
-      <a href="#formular" class="btn-brand" id="cta-hero" onclick="gtag('event','generate_lead',{method:'hero_cta'});">Jetzt kostenlos starten</a>
+      <a href="#formular" class="btn-brand btn-white" id="cta-hero" onclick="gtag('event','generate_lead',{method:'hero_cta'});">Jetzt kostenlos starten</a>
       <p class="mt-4 text-sm">Keine Kreditkarte • Jederzeit kündbar</p>
     </div>
     <!-- Sticky CTA (mobile only) -->
