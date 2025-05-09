@@ -8,11 +8,18 @@
   <!-- Tailwind CDN for rapid prototyping -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Tag (GA4) – Property ID ersetzen -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <!-- In Deinem GitHub-Page-Repository, z. B. index.html -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-63KN7E50VP"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config','G-XXXXXXX',{send_page_view:true});
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config','G-63KN7E50VP',{
+      linker: {
+        domains: ['getnoms.app','https://clickqcollect.github.io/noms-landingpage/']
+      },
+      send_page_view: true
+    });
   </script>
 
   <style>
