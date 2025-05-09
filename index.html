@@ -342,14 +342,14 @@
     });
   </script>
 
-  <!-- Mobile CTA Observer -->
-  <script>
-    const floatCta=document.getElementById('floatCta');
-    const hero=document.querySelector('header');
-    new IntersectionObserver(([e])=>{
-      e.intersectionRatio<.1?floatCta.classList.add('show'):floatCta.classList.remove('show');
-    },{threshold:[.1]}).observe(hero);
-  </script>
+<!-- Mobile CTA: immer sichtbar auf Geräten < 768 px -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const floatCta = document.getElementById('floatCta');
+    if (floatCta) floatCta.classList.add('show');   // Button sofort einblenden
+  });
+</script>
+
 
 
   <!-- ================= I18N SCRIPT (NEU) ================= -->
