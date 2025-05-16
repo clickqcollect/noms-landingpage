@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noms – Die #1 Plattform für unabhängige Restaurants</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --gradient: linear-gradient(90deg, #ffa067 0%, #ff386a 50%, #d727e0 100%);
+        }
+        .gradient-bg {
+            background-image: var(--gradient);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-900">
+
+<!-- Hero Section -->
+<section class="gradient-bg py-24 px-6 text-center text-white">
+    <h1 class="text-5xl font-bold">Mach dein Restaurant unabhängig von Lieferdiensten</h1>
+    <p class="text-xl mt-4">Steigere deinen Gewinn mit deiner eigenen Bestellplattform – ohne Provisionen.</p>
+    <a href="#demo" class="mt-6 inline-block bg-white text-gray-900 font-bold py-3 px-6 rounded-full shadow-md">Kostenlose Demo buchen</a>
+</section>
+
+<!-- Vorteile einfach und klar -->
+<section class="py-12 px-6 max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Warum unabhängige Restaurants noms lieben</h2>
+    <ul class="text-left space-y-4">
+        <li>✔️ <strong>0% Provision:</strong> Verdiene mehr, zahle weniger.</li>
+        <li>✔️ <strong>Fixpreis-Lieferungen:</strong> 5 € Lieferungen, keine Überraschungen.</li>
+        <li>✔️ <strong>Integriertes Marketing:</strong> Automatische SMS & E-Mails für mehr Bestellungen.</li>
+        <li>✔️ <strong>Schneller Start:</strong> Starte innerhalb von 24 Stunden – ohne technisches Vorwissen.</li>
+        <li>✔️ <strong>Monatlich kündbar:</strong> Kein Risiko, volle Flexibilität.</li>
+    </ul>
+</section>
+
+<!-- Einfacher Ersparnisrechner -->
+<section class="py-12 px-6 max-w-xl mx-auto text-center bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-bold mb-4">Wie viel Geld verlierst du monatlich?</h2>
+    <input id="monthlySales" type="number" placeholder="Monatlicher Umsatz (€)" class="w-full p-2 border rounded mb-3">
+    <input id="currentCommission" type="number" placeholder="Aktuelle Provision (%)" class="w-full p-2 border rounded mb-3">
+    <button onclick="calculateSavings()" class="w-full gradient-bg text-white font-bold py-2 rounded">Ersparnis berechnen</button>
+    <p id="result" class="mt-3 font-bold"></p>
+</section>
+
+<!-- Exklusiver Lieferpartner -->
+<section class="py-12 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4">Premium-Lieferungen, denen große Marken vertrauen</h2>
+    <p class="mb-6">Unser Lieferpartner beliefert bereits Burger King, KFC und die REWE Group – Zuverlässigkeit garantiert.</p>
+    <div class="flex justify-center gap-8">
+        <img src="burgerking.png" alt="Burger King" class="h-10">
+        <img src="kfc.png" alt="KFC" class="h-10">
+        <img src="rewe.png" alt="REWE Group" class="h-10">
+    </div>
+</section>
+
+<!-- Demo buchen CTA -->
+<section id="demo" class="py-12 px-6 bg-gray-100 text-center">
+    <h2 class="text-3xl font-bold mb-4">Starte heute mit deiner eigenen Plattform</h2>
+    <p class="mb-6">Überzeuge dich in einer kostenlosen Demo.</p>
+    <a href="https://cal.com/getnoms/noms-fur-dein-restaurant" class="gradient-bg text-white font-bold py-3 px-6 rounded-full">Kostenlose Demo buchen</a>
+</section>
+
+<!-- WhatsApp CTA -->
+<a href="https://wa.me/4915679011001" class="fixed bottom-4 right-4 bg-green-500 text-white py-2 px-4 rounded-full shadow-md">
+    📲 Jetzt per WhatsApp kontaktieren
+</a>
+
+<script>
+function calculateSavings() {
+    const sales = parseFloat(document.getElementById('monthlySales').value);
+    const commission = parseFloat(document.getElementById('currentCommission').value);
+    if (!sales || !commission) {
+        document.getElementById('result').textContent = "Bitte beide Felder ausfüllen.";
+        return;
+    }
+    const savings = sales * (commission / 100);
+    document.getElementById('result').textContent = `Du verlierst aktuell €${savings.toFixed(2)} jeden Monat.`;
+}
+</script>
+
+</body>
+</html>

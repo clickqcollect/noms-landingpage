@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>noms Demo Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0052FF;
+      --orange: #FF6A00;
+      --gray-100: #F4F5F7;
+      --gray-300: #D1D5DB;
+      --gray-500: #6B7280;
+      --gray-700: #374151;
+      --gray-900: #111827;
+      --white: #FFFFFF;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--gray-900); background: var(--white); line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    .sticky-cta { position: sticky; top: 0; background: var(--white); z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.1); padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; }
+    .sticky-cta button { background: var(--orange); color: var(--white); border: none; padding: 0.5rem 1rem; border-radius: 4px; font-weight: 600; cursor: pointer; }
+    .container { display: flex; flex-wrap: wrap; min-height: 100vh; }
+    .left, .right { flex: 1 1 400px; padding: 40px; }
+    .left { background: var(--gray-100); }
+    .logo { margin-bottom: 16px; }
+    .logo img { width: 120px; }
+    .trust-logos { display: flex; gap: 12px; margin-bottom: 16px; }
+    .trust-logos img { height: 24px; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .subheadline { font-size: 1.125rem; margin-bottom: 1.5rem; color: var(--gray-700); }
+    .hero-cta { margin-bottom: 24px; }
+    .hero-cta button { background: var(--orange); color: var(--white); border: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .countdown { font-weight: 600; color: var(--orange); margin-bottom: 24px; }
+    .timeline { list-style: none; position: relative; margin-bottom: 24px; }
+    .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--blue); }
+    .timeline li { position: relative; padding-left: 40px; margin-bottom: 1.5rem; }
+    .timeline li:last-child { margin-bottom: 0; }
+    .timeline li::before { content: ''; position: absolute; left: 4px; top: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--blue); }
+    .timeline h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+    .timeline p { font-size: 0.875rem; color: var(--gray-700); }
+
+    .progress-form { width: 100%; max-width: 400px; background: var(--white); padding: 24px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .progress-step { display: none; }
+    .progress-step.active { display: block; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.875rem; margin-bottom: 4px; color: var(--gray-700); }
+    .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 1px solid var(--gray-300); border-radius: 4px; font-size: 1rem; }
+    .form-actions { display: flex; justify-content: space-between; align-items: center; }
+    .form-actions button { background: var(--blue); color: var(--white); border: none; padding: 0.75rem 1.5rem; border-radius: 4px; font-weight: 600; cursor: pointer; }
+    .form-actions button.secondary { background: transparent; color: var(--gray-700); }
+    .calendar-container { width: 100%; max-width: 400px; height: 600px; margin-top: 24px; }
+    .legal { font-size: 0.625rem; color: var(--gray-500); text-align: center; margin-top: 12px; }
+
+    @media (max-width: 768px) {
+      .container { flex-direction: column; }
+      .left, .right { padding: 20px; }
+      h1 { font-size: 1.75rem; }
+      .calendar-container { height: 500px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sticky-cta">
+    <button onclick="document.getElementById('calendar-section').scrollIntoView({ behavior: 'smooth' })">
+      Kostenlose Demo buchen
+    </button>
+  </div>
+  <div class="container">
+    <div class="left">
+      <div class="logo"><img src="nomslogo.png" alt="noms logo"></div>
+      <div class="trust-logos">
+        <img src="g2-logo.svg" alt="G2">
+        <img src="capterra-logo.svg" alt="Capterra">
+        <img src="tuv-logo.svg" alt="TÜV">
+      </div>
+      
+      <h1>Mit noms erhälst du mehr direkte Bestellungen, mehr Umsatz und mehr Stammkunden</h1>
+      <p class="subheadline">Keine Verträge. Keine Bindung. Nichts zu verlieren. Kein Wunder, dass viele Restaurants auf noms vertrauen.</p>
+      <div class="hero-cta">
+        <button onclick="document.getElementById('form-step-1').scrollIntoView({ behavior: 'smooth' })">Kostenlose Demo buchen</button>
+      </div>
+      <!--<p class="countdown">Nur noch <span id="slots">5</span> Demo-Slots heute verfügbar.</p>-->
+      <ul class="timeline">
+        <li><h3>Mehr Kunden von Google & Social</h3><p>Provisionsfreie Direktbestellungen.</p></li>
+        <li><h3>Umsatz pro Kunde steigern</h3><p>Automatisierte E-Mail & SMS-Kampagnen.</p></li>
+        <li><h3>Stammkunden belohnen</h3><p>Coupons & Bonusprogramme.</p></li>
+        <li><h3>Lieferkosten optimieren</h3><p>5 €/Festpreis-Lieferung mit Top-Fahrernetzwerk.</p></li>
+      </ul>
+    </div>
+    <div class="right" id="calendar-section">
+      <!-- Cal inline embed code begins -->
+<div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline"></div>
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "noms-fur-dein-restaurant", {origin:"https://cal.com"});
+
+  Cal.ns["noms-fur-dein-restaurant"]("inline", {
+    elementOrSelector:"#my-cal-inline",
+    config: {"layout":"month_view"},
+    calLink: "getnoms/noms-fur-dein-restaurant",
+  });
+
+  Cal.ns["noms-fur-dein-restaurant"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal inline embed code ends -->
+      <div class="calendar-container" id="my-cal-inline"></div>
+      <p class="legal">*Ergebnisse basieren auf durchschnittlichen Kundendaten.</p>
+    </div>
+  </div>
+  <script>
+    // Countdown slots demo
+    let slots = 5;
+    const slotsEl = document.getElementById('slots');
+    const interval = setInterval(() => {
+      if (slots > 1) { slots--; slotsEl.textContent = slots; }
+      else clearInterval(interval);
+    }, 30000);
+
+    // Progressive form logic
+    function nextStep() {
+      document.getElementById('form-step-1').classList.remove('active');
+      document.getElementById('form-step-2').classList.add('active');
+    }
+    function prevStep() {
+      document.getElementById('form-step-2').classList.remove('active');
+      document.getElementById('form-step-1').classList.add('active');
+    }
+    function submitForm() {
+      alert('Danke! Wir melden uns in Kürze.');
+      // Hier Callback / Tracking einfügen
+    }
+
+    // Lazy-load Cal embed when visible
+    const calContainer = document.getElementById('my-cal-inline');
+    let calLoaded = false;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !calLoaded) {
+        calLoaded = true;
+        var script = document.createElement('script');
+        script.src = 'https://app.cal.com/embed/embed.js'; document.head.appendChild(script);
+        script.onload = () => {
+          Cal('init', 'noms-fur-dein-restaurant', {origin:'https://cal.com'});
+          Cal.ns['noms-fur-dein-restaurant']('inline', { elementOrSelector:'#my-cal-inline', config:{layout:'month_view'}, calLink:'getnoms/noms-fur-dein-restaurant'});
+        };
+      }
+    }, { rootMargin: '0px 0px 200px 0px' });
+    observer.observe(calContainer);
+  </script>
+</body>
+</html>
