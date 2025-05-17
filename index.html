@@ -8,7 +8,7 @@
   <!-- Tailwind CDN for rapid prototyping -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- In Deinem GitHub-Page-Repository, z. B. index.html -->
+  <!-- Google Tag Manager -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMK96BTYDM"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -21,9 +21,17 @@
       send_page_view: true
     });
   </script>
+  <!-- Cal floating-popup embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "noms-fur-dein-restaurant", {origin:"https://cal.com"});
+
+  Cal.ns["noms-fur-dein-restaurant"]("floatingButton", {"calLink":"getnoms/noms-fur-dein-restaurant","config":{"layout":"month_view"},"buttonText":"Gratis Spar-Analyse buchen","buttonColor":"#13AA6D","buttonTextColor":"#ffffff"}); 
+  Cal.ns["noms-fur-dein-restaurant"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <!-- Cal floating-popup embed code ends -->
 
   <style>
-    /* ================= BRAND COLORS & UTILITIES ================ */
     :root {
       --primary-1:#ffa067;
       --primary-2:#ff386a;
@@ -38,27 +46,23 @@
     }
     .btn-brand:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.15);}
     .btn-white{background:#fff;color:#000;}
-
-    /* Mobile CTA */
     .float-cta {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  display: block;        /* ← neu */
-  width: 100%;
-  background-image: var(--gradient);
-  color: #fff;
-  font-weight: 600;
-  padding: 1rem 0;
-  text-align: center;
-  transform: translateY(100%);
-  transition: transform .25s ease;
-  z-index: 80;
-}
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      display: block;
+      width: 100%;
+      background-image: var(--gradient);
+      color: #fff;
+      font-weight: 600;
+      padding: 1rem 0;
+      text-align: center;
+      transform: translateY(100%);
+      transition: transform .25s ease;
+      z-index: 80;
+    }
     .float-cta.show{transform:translateY(0);}
     @media (min-width:768px){.float-cta{display:none;}}
-
-    /* Language switcher */
     .lang-btn img{height:20px;width:28px;display:block;}
     .lang-btn{opacity:.6;transition:opacity .15s ease;}
     .lang-btn.active{opacity:1;}
@@ -66,144 +70,114 @@
 </head>
 
 <body class="bg-gray-50 text-gray-900 antialiased scroll-smooth">
-  <!-- ===== LANGUAGE SELECTOR ===== -->
-  <!-- ================== HERO ================== -->
-  <header class="brand-gradient text-white pt-20 pb-24 px-4"  style="padding-top:150px">
+  <header class="brand-gradient text-white pt-20 pb-24 px-4" style="padding-top:150px">
     <div class="max-w-4xl mx-auto text-center space-y-6">
-      <!--<div class="inline-flex items-center justify-center h-20 w-20 mx-auto mb-4 bg-white rounded-2xl shadow-lg">
-        <img src="nomslogo.png" alt="noms logo" class="h-14 w-14 object-contain">
-      </div>-->
-<div id="langSwitcher" class="text-center space-x-2 z-50">
- <!-- bestehende Buttons -->
-<button class="lang-btn" data-lang="de" aria-label="Deutsch">
-  <img src="https://flagcdn.com/h20/de.png" alt="Deutsch">
-</button>
-<button class="lang-btn" data-lang="en" aria-label="English">
-  <img src="https://flagcdn.com/h20/gb.png" alt="English">
-</button>
-
-<!-- neu hinzufügen -->
-<button class="lang-btn" data-lang="es" aria-label="Español">
-  <img src="https://flagcdn.com/h20/es.png" alt="Español">
-</button>
-<button class="lang-btn" data-lang="it" aria-label="Italiano">
-  <img src="https://flagcdn.com/h20/it.png" alt="Italiano">
-</button>
-<button class="lang-btn" data-lang="fr" aria-label="Français">
-  <img src="https://flagcdn.com/h20/fr.png" alt="Français">
-</button>
-  </div>
+      <div id="langSwitcher" class="text-center space-x-2 z-50">
+        <button class="lang-btn" data-lang="de" aria-label="Deutsch">
+          <img src="https://flagcdn.com/h20/de.png" alt="Deutsch">
+        </button>
+        <button class="lang-btn" data-lang="en" aria-label="English">
+          <img src="https://flagcdn.com/h20/gb.png" alt="English">
+        </button>
+        <button class="lang-btn" data-lang="es" aria-label="Español">
+          <img src="https://flagcdn.com/h20/es.png" alt="Español">
+        </button>
+        <button class="lang-btn" data-lang="it" aria-label="Italiano">
+          <img src="https://flagcdn.com/h20/it.png" alt="Italiano">
+        </button>
+        <button class="lang-btn" data-lang="fr" aria-label="Français">
+          <img src="https://flagcdn.com/h20/fr.png" alt="Français">
+        </button>
+      </div>
       <h1 id="hero_heading" class="text-4xl md:text-6xl font-extrabold leading-tight">
-        Mehr Onlinebestellungen<br>
-        zu fairen Konditionen
+        Essen Lieferplattformen bei jeder Bestellung bei dir mit?
       </h1>
       <p id="hero_tagline" class="text-lg md:text-2xl font-medium">
-        noms macht es einfach für vielbeschäftigte Restaurantinhaber den direkten Onlineumsatz zu steigern, die Lieferkosten zu senken und Folgebestellungen mit automatischen E-Mail & SMS Kampagnen zu fördern.
+        30 % jeder Onlinebestellung geht an Lieferplattformen —<br> Geld, das Dir als Restaurantinhaber fehlt.<br>
+        <strong>noms</strong> gibt Dir die Kontrolle zurück und macht aus teuren Lieferplattform-Bestellern profitable Direktgäste.
       </p>
       <a id="cta-hero" target="_blank" href="https://cal.com/getnoms/noms-fur-dein-restaurant"
          class="btn-brand btn-white"
-         onclick="gtag('event','generate_lead',{method:'hero_cta'});">Kostenlose Demo buchen</a>
-      <p id="hero_note" class="mt-4 text-sm">Geld-zurück-Garantie • Keine Kreditkarte • Jederzeit kündbar</p>
+         onclick="gtag('event','generate_lead',{method:'hero_cta'});">Umsatz-Potenzial zeigen lassen</a>
+      <p id="hero_note" class="mt-4 text-sm">100% kostenlos • Nur 15 Min. • Keine Verpflichtung</p>
+      <div class="mt-8 space-y-2">
+        <div aria-label="Kundenlogos" class="flex flex-wrap justify-center gap-6">
+          <img loading="lazy" src="kfc.svg" alt="KFC Logo" class="h-9 md:h-10"/>
+          <img loading="lazy" src="burgerking.png" alt="Burger King Logo" class="h-9 md:h-10"/>
+          <img loading="lazy" src="rewegroup.png" alt="REWE Group Logo" class="h-9 md:h-10"/>
+          <img loading="lazy" src="knuspr.jpg" alt="Knuspr Logo" class="h-9 md:h-10"/>
+        </div>
+        <p id="network_customers" class="text-sm opacity-90">Bereits Kunden unseres exklusiven Premium-Liefernetzwerks</p>
+      </div>
     </div>
   </header>
 
-  <!-- ================= PAIN VS. SOLUTION ================= -->
-  <section class="py-16 px-4 bg-gray-50">
+  <section class="py-16 px-4 bg-white">
     <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-start">
       <div class="space-y-5">
-        <h2 id="pain_heading" class="headline text-3xl font-bold">Jeder 3.&nbsp;Teller? Verschenkt.</h2>
+        <h2 id="pain_heading" class="headline text-3xl font-bold">Warum verschenkst du freiwillig jeden 3. Teller?</h2>
         <img src="dip.png" alt="provisionsanbieter" width="250" height="250">
         <p id="pain_p1">
-          Lieferplattformen schlucken <strong>30 % Provision</strong>. Bei nur 100 Bestellungen × 50 € sind das
-          <strong>1.500 €</strong> pro Monat.
+          Liefer-Apps kassieren pro Monat <strong>tausende Euro an Provisionen</strong> – Geld, das direkt <strong>von deinem Gewinn</strong> abgeht.
         </p>
-        <p id="pain_p2" class="font-semibold">Mit deinem <span class="font-bold">eigenen</span> Bestellsystem bleibt das Geld bei dir.</p>
+        <p id="pain_p2">Mit deinem <span class="font-bold">eigenen Bestellsystem</span> bleibt das Geld bei dir.</p>
       </div>
-
       <div class="bg-white rounded-2xl shadow-lg p-6">
-        <h3 id="compare_title" class="font-semibold mb-4 text-center">Kostenvergleich / Monat</h3>
+        <h3 id="compare_title" class="font-semibold mb-4 text-center">Deine Einsparungen pro Monat</h3>
         <table class="w-full text-base md:text-lg">
           <thead class="border-b text-center">
             <tr>
               <th id="th_orders" class="py-3">Bestellungen</th>
-              <th id="th_commission" class="py-3">30 % Provision</th>
-              <th id="th_noms" class="py-3 text-emerald-600">Eigenes System</th>
+              <th id="th_commission" class="py-3">Liefer-Apps (30 %)</th>
+              <th id="th_noms" class="py-3 text-emerald-600">Eigenes Bestellsystem (0%)</th>
             </tr>
           </thead>
           <tbody>
             <tr class="border-b text-center">
-              <td class="py-3">100</td><td class="py-3">30 %</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">≈ 22 %</td>
+              <td class="py-3">100</td><td class="py-3">900 €</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">0 €</td>
             </tr>
             <tr class="border-b bg-gray-50 text-center">
-              <td class="py-3">500</td><td class="py-3">30 %</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">≈ 18 %</td>
+              <td class="py-3">500</td><td class="py-3">4.500 €</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">0 €</td>
             </tr>
             <tr class="border-b text-center">
-              <td class="py-3">1 000</td><td class="py-3">30 %</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">≈ 17 %</td>
-            </tr>
-            <tr class="bg-gray-50 text-center">
-              <td class="py-3">2 000</td><td class="py-3">30 %</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">≈ 17 %</td>
+              <td class="py-3">1 000</td><td class="py-3">9.000 €</td><td class="py-3 font-semibold text-emerald-700 bg-emerald-50">0 €</td>
             </tr>
           </tbody>
         </table>
         <p id="compare_basis" class="text-xs mt-3 text-gray-500 text-center">
-          Basis: 149 €/Monat + 5 €/Lieferung, Ø-Warenkorb 30 €
+          Basis: Ø-Warenkorb 30 €, noms zzgl. feste Servicegebühr (149 €/Monat + 5 €/Lieferung)
         </p>
       </div>
     </div>
   </section>
 
-  <!-- ================= SAVINGS CALCULATOR ================= -->
-  <section class="py-16 px-4 bg-white" id="calculator">
+  <section class="py-16 px-4 bg-gray-50" id="calculator">
     <div class="max-w-3xl mx-auto text-center space-y-8">
       <h2 id="calc_heading" class="headline text-3xl font-bold">
-        Berechne selbst, wieviel du mit noms sparen kannst
+        Bereit, deinen Gewinn sofort zu erhöhen?
       </h2>
-      <div class="grid md:grid-cols-3 gap-4 items-end">
-        <div>
-          <label id="calc_label_orders" class="block text-sm font-medium mb-1">
-            Wieviele Bestellungen von Lieferplattformen bekommst du pro Monat?
-          </label>
-          <input type="number" id="orders" value="100" min="1"
-                 class="w-full border border-gray-300 rounded-lg px-3 py-2 text-center">
-        </div>
-        <div>
-          <label id="calc_label_value" class="block text-sm font-medium mb-1">
-            Was ist der durchschnittliche Bestellwert (ca.)?
-          </label>
-          <input type="number" id="orderValue" value="50" min="1"
-                 class="w-full border border-gray-300 rounded-lg px-3 py-2 text-center">
-        </div>
-        <div>
-          <button id="calcBtn" class="btn-brand w-full">Einsparung berechnen</button>
-        </div>
+      <div class="text-lg md:text-xl">
+        <a id="second-cta" target="_blank" href="https://cal.com/getnoms/noms-fur-dein-restaurant"
+           class="btn-brand btn-dark"
+           onclick="gtag('event','generate_lead',{method:'second_cta'});">Umsatz-Potenzial zeigen lassen</a>
       </div>
-      <div id="result" class="text-lg font-medium mt-6 hidden"></div>
     </div>
   </section>
 
-<!-- ================= PREMIUM LIEFERNETZWERK ================= -->
-  <section id="premium-network" class="py-16 px-4 bg-gray-50">
+  <section id="premium-network" class="py-16 px-4 bg-white">
     <div class="max-w-5xl mx-auto text-center space-y-8">
       <h2 id="premium_network_heading" class="headline text-3xl font-bold">Unser Premium-Liefernetzwerk</h2>
-      <p id="premium_network_text" class="text-lg md:text-xl">
-        Zusätzlich zu unseren unschlagbaren Konditionen profitierst Du von DoDos bewährtem Liefernetzwerk. 
-        Bereits heute liefern sie zuverlässig für <strong>KFC</strong>, <strong>Burger King</strong>, <strong>knuspr.de</strong> und <strong>REWE Group</strong> – 
-        mit einer beeindruckenden <span class="font-bold text-emerald-600">99,1 %igen</span> Erfolgsquote bei der Zustellung!
-      </p>
+      <p id="premium_network_p1" class="text-lg md:text-xl">Profitier von einem bewährten Netzwerk (<strong>99,1 % Zustellerfolg</strong>) – dasselbe, auf das KFC, Burger King & Co. setzen.</p>
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center justify-items-center">
-        <img src="kfc.svg" alt="KFC Logo" class="h-12">
-        <img src="burgerking.png" alt="Burger King Logo" class="h-12">
-        <img src="knuspr.png" alt="Knuspr Logo" class="h-12">
-        
-        <img src="rewegroup.png" alt="Rewe Logo" class="h-12">
+        <img loading="lazy" src="kfc.svg" alt="KFC Logo" class="h-12"/>
+        <img loading="lazy" src="burgerking.png" alt="Burger King Logo" class="h-12"/>
+        <img loading="lazy" src="knuspr.png" alt="Knuspr Logo" class="h-12"/>
+        <img loading="lazy" src="rewegroup.png" alt="REWE Group Logo" class="h-12"/>
       </div>
-      <p id="premium_network_subtext" class="mt-4 text-sm text-gray-600">
-        Verlass Dich auf ein ausgereiftes System, in dem Deine Gerichte pünktlich ankommen und Deine Gäste begeistert sind.
-      </p>
+      <p id="premium_network_p2" class="mt-4 text-sm text-gray-600">Deine Gerichte kommen pünktlich und appetitlich an – garantiert.</p>
     </div>
-  </section>
+</section>
 
-  <!-- ================= FEATURE GRID ================= -->
   <section class="py-16 px-4 bg-gray-50">
     <div class="max-w-5xl mx-auto text-center space-y-12">
       <h2 id="feature_heading" class="headline text-3xl font-bold">Warum Restaurants noms lieben</h2>
@@ -223,7 +197,7 @@
         <div class="p-6 bg-white rounded-xl shadow-sm">
           <h3 id="feature_marketing_title" class="font-semibold mb-2">🔄 Automatisches Marketing</h3>
           <p id="feature_marketing_desc">Segmentierte E-Mails steigern Wiederbestellungen um bis zu 60 %.</p>
-        </div>      
+        </div>
         <div class="p-6 bg-white rounded-xl shadow-sm">
           <h3 id="feature_fast_title" class="font-semibold mb-2">⚡️ In 24 h live</h3>
           <p id="feature_fast_desc">Anmeldung heute, Bestellungen morgen – super-schnelles Onboarding.</p>
@@ -236,37 +210,35 @@
     </div>
   </section>
 
-  <!-- ================= TESTIMONIAL ================= -->
-  <section class="bg-gray-50 py-16 px-4">
+  <section class="bg-white py-16 px-4">
     <div class="max-w-4xl mx-auto text-center space-y-8">
-      <p id="testimonial_quote" class="text-xl font-medium">„Die ersten Bestellungen über noms kamen direkt nach der Einrichtung, das war sehr beeindruckend. Super Service, für mich hat sich noms definitiv gelohnt!“</p>
-      <p id="testimonial_author" class="font-semibold">Mozzarella & Pomodoro, Berlin</p>
+      <h2 id="testimonial_headline" class="headline text-3xl font-bold">Unsere Kunden sind überzeugt</h2>
+      <p id="testimonial_quote" class="text-xl font-medium">„Mit noms hat sich unser direkter Onlineumsatz mehr als verdoppelt, wir sparen jeden Monat hunderte Euro an Plattformgebühren und verfügen jetzt über ein System, das unser Online-Wachstum aktiv fördert. Weil wir nun endlich Kundendaten besitzen, können wir gezielte Aktionen starten – und die Leute kommen immer wieder. Diese kleinen Stellschrauben haben uns geholfen, unseren Außerhausumsatz profitabel aufs nächste Level zu bringen.“</p>
+      <p id="testimonial_author" class="font-semibold">Trattoria Zoe, Berlin, Prenzlauer Berg</p>
     </div>
   </section>
 
-  <!-- ================= HOW IT WORKS ================= -->
-  <section class="py-16 px-4 bg-white">
+  <section class="py-16 px-4 bg-gray-50">
     <div class="max-w-5xl mx-auto text-center space-y-12">
       <h2 id="how_heading" class="headline text-3xl font-bold">In 3 Schritten live</h2>
       <div class="grid md:grid-cols-3 gap-8 text-left md:text-center">
         <div class="p-6 bg-gray-100 rounded-xl shadow-sm space-y-2">
-          <h3 id="step1_title" class="font-semibold text-lg">1 . Registrieren</h3>
-          <p id="step1_desc">Formular ausfüllen & Dashboard-Zugang erhalten – keine Kreditkarte nötig.</p>
+          <h3 id="step1_title" class="font-semibold text-lg">1. Anmeldung</h3>
+          <p id="step1_desc">Kostenlos und schnell Zugang zu deinem noms erhalten.</p>
         </div>
         <div class="p-6 bg-gray-100 rounded-xl shadow-sm space-y-2">
-          <h3 id="step2_title" class="font-semibold text-lg">2 . In der App erscheinen</h3>
-          <p id="step2_desc">Wir listen dein Restaurant in unserer Marketplace-App & optimieren deine digitalen Vertriebskanäle</p>
+          <h3 id="step2_title" class="font-semibold text-lg">2. Einrichtung</h3>
+          <p id="step2_desc">Wir listen und optimieren dein Restaurant.</p>
         </div>
         <div class="p-6 bg-gray-100 rounded-xl shadow-sm space-y-2">
-          <h3 id="step3_title" class="font-semibold text-lg">3 . Bestellungen kassieren</h3>
-          <p id="step3_desc">Kunden bestellen, unser Fahrer-Netzwerk liefert – du behältst den vollen Bestellwert.</p>
+          <h3 id="step3_title" class="font-semibold text-lg">3. Umsatz machen</h3>
+          <p id="step3_desc">Profitiere sofort von provisionsfreien Bestellungen.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Guarantees -->
-  <section class="py-14 px-4">
+  <section class="py-14 px-4 bg-white">
     <div class="max-w-3xl mx-auto text-center space-y-8">
       <h2 id="guarantees_heading" class="headline text-3xl font-bold">0 % Risiko. 100 % Fairness.</h2>
       <ul class="space-y-4 text-left">
@@ -278,8 +250,7 @@
     </div>
   </section>
 
-<!-- ===== TRUST BELT ===== -->
-  <section class="py-10 px-4 bg-white">
+  <section class="py-10 px-4 bg-gray-50">
     <div class="max-w-5xl mx-auto grid md:grid-cols-4 gap-6 text-center">
       <div class="flex flex-col items-center">
         <img src="berlin.png" alt="" class="h-12 mb-2">
@@ -300,36 +271,29 @@
     </div>
   </section>
 
-  <!-- ================= FAQ ================= -->
   <section class="py-16 px-4 bg-white">
     <div class="max-w-3xl mx-auto space-y-8">
       <h2 id="faq_heading" class="headline text-3xl font-bold text-center">Häufige Fragen</h2>
-
       <details class="p-4 bg-gray-50 rounded-lg">
         <summary id="faq_q1" class="font-semibold cursor-pointer">Wirklich provisionsfrei? Wo ist der Haken?</summary>
         <p id="faq_a1" class="mt-2">Absolut, 0,0 %! Restaurants haben es schon schwer genug, deswegen haben wir jeden Teil unseres Produkts mit einem Ziel entwickelt: deinen Umsatz zu steigern!</p>
       </details>
-
       <details class="p-4 bg-gray-50 rounded-lg">
         <summary id="faq_q2" class="font-semibold cursor-pointer">Nutzt ihr die selben Fahrer wie Wolt, Uber Eats oder Lieferando?</summary>
         <p id="faq_a2" class="mt-2">Nein. Wir arbeiten mit dem Premium-Lieferdienst DoDo (liefert bereits für REWE, KFC, Burger King etc.) zusammen, um Restaurants eine hohe Lieferqualität anbieten zu können. Dein liebevoll zubereitetes Essen soll schließlich appetitlich und ansprechend bei deinen Gästen ankommen.</p>
       </details>
-
       <details class="p-4 bg-gray-50 rounded-lg">
         <summary id="faq_q3" class="font-semibold cursor-pointer">Brauche ich eigene Fahrer?</summary>
         <p id="faq_a3" class="mt-2">Nein. Unser Lieferpartner DoDo übernimmt die Lieferung bundesweit.</p>
       </details>
-
       <details class="p-4 bg-gray-50 rounded-lg">
         <summary id="faq_q4" class="font-semibold cursor-pointer">Welche Vertragsbindung habe ich?</summary>
         <p id="faq_a4" class="mt-2">Monatlich kündbar – ohne Gebühren und du behälst natürlich alle Kundendaten, Templates und Fotos.</p>
       </details>
-
       <details class="p-4 bg-gray-50 rounded-lg">
         <summary id="faq_q5" class="font-semibold cursor-pointer">Wie lange dauert die Einrichtung?</summary>
         <p id="faq_a5" class="mt-2">In der Regel bist du in weniger als 24 Stunden online. Die Optimierung deines Google Business Profils findet innerhalb von 7 Werktagen statt.</p>
       </details>
-
       <details class="p-4 bg-gray-50 rounded-lg">
         <summary id="faq_q6" class="font-semibold cursor-pointer">Wie und wann erhalte ich meine Umsätze?</summary>
         <p id="faq_a6" class="mt-2">Sofort. Jede Bestellung geht ohne Umwege direkt an dich. Alle Zahlungen laufen direkt auf dein Konto; wir behalten keine Provision. Jede Zahlung läuft über unseren sicheren Zahlungsdienstleister mollie</p>
@@ -337,445 +301,401 @@
     </div>
   </section>
 
-  <!-- ================= SECONDARY CTA ================= -->
   <section class="py-20 brand-gradient text-white text-center px-4">
     <h2 id="secondary_heading" class="text-3xl md:text-4xl font-extrabold mb-6">Spare ab der ersten Bestellung – starte jetzt kostenlos.</h2>
-    <a href="https://cal.com/getnoms/noms-fur-dein-restaurant" target="_blank" id="secondary_cta"
-       class="bg-white text-[#ff386a] font-semibold px-12 py-4 rounded-full shadow-lg hover:shadow-xl transition">Kostenlose Demo buchen</a>
-    <p id="secondary_note" class="mt-3 text-sm">Ohne Kreditkarte • Sofort kündbar</p>
+    <a href="https://cal.com/getnoms/noms-fur-dein-restaurant" target="_blank" id="secondary-cta"
+       class="bg-white text-[#ff386a] font-semibold px-12 py-4 rounded-full shadow-lg hover:shadow-xl transition">Umsatz-Potenzial zeigen lassen</a>
+    <p id="secondary_note" class="mt-3 text-sm">100% kostenlos • Nur 15 Min. • Keine Verpflichtung</p>
   </section>
 
-  <!-- ================= FOOTER ================= -->
   <footer class="py-10 text-center text-xs bg-gray-900 text-gray-400">
     <span id="footer_text">© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • 015679 01 10 01</span>
   </footer>
-    <!-- FLOAT CTA -->
-  <a id="floatCta" target="_blank" href="https://cal.com/getnoms/noms-fur-dein-restaurant"
-     class="float-cta"
-     onclick="gtag('event','generate_lead',{method:'float_cta'});">Kostenlose Demo buchen</a>
 
-<!-- Cal floating-popup embed code begins -->
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "noms-fur-dein-restaurant", {origin:"https://cal.com"});
-
-  Cal.ns["noms-fur-dein-restaurant"]("floatingButton", {"calLink":"getnoms/noms-fur-dein-restaurant","config":{"layout":"month_view"},"buttonText":"Kostenlose Demo buchen","buttonColor":"#13AA6D"}); 
-  Cal.ns["noms-fur-dein-restaurant"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-  </script>
-  <!-- Cal floating-popup embed code ends -->
-
-  <!-- ================= JAVASCRIPT ================= -->
-
-  <!-- Calculator -->
   <script>
-    document.getElementById('calcBtn').addEventListener('click',()=>{
-      const orders=parseFloat(document.getElementById('orders').value)||0;
-      const value=parseFloat(document.getElementById('orderValue').value)||0;
-      if(orders<=0||value<=0){alert('Bitte gültige Werte eingeben');return;}
-      const commissionMonth=orders*value*0.30;
-      const nomsMonth=149+orders*5;
-      const commissionYear=commissionMonth*12;
-      const nomsYear=nomsMonth*12;
-      const diffYear=commissionYear-nomsYear;
-      const res=document.getElementById('result');
-      res.classList.remove('hidden');
-      res.innerHTML=`<div class='text-lg'>
-        <strong>Jährliche Plattformkosten:</strong> ${commissionYear.toLocaleString('de-DE',{style:'currency',currency:'EUR'})}<br>
-        <strong>Jährliche Noms-Kosten:</strong> ${nomsYear.toLocaleString('de-DE',{style:'currency',currency:'EUR'})}
-        </div><div class='mt-4 text-2xl font-extrabold text-emerald-600'>
-        Du sparst ${diffYear.toLocaleString('de-DE',{style:'currency',currency:'EUR'})} pro Jahr!
-        </div>`;
-      gtag('event','view_item',{item_id:'calculator',value:diffYear});
-    });
-  </script>
-
-<!-- Mobile CTA: immer sichtbar auf Geräten < 768 px -->
-<script>
-  const floatCta = document.getElementById('floatCta');
-  if (floatCta) floatCta.classList.add('show');
-</script>
-
-
-
-  <!-- ================= I18N SCRIPT (NEU) ================= -->
-  <script>
-    /* ---------- 1. Wörterbuch ---------- */
     const translations = {
-  en: {
-    hero_heading: 'More online orders<br>at fair rates',
-    hero_tagline: 'noms makes it easy for busy restaurant owners to boost direct online sales, lower delivery costs and drive repeat orders with automated email & SMS campaigns.',
-    'cta-hero': 'Book a free demo',
-    hero_note: 'Money-back guarantee • No credit card • Cancel anytime',
+      'de': {
+        'hero_heading': { text: "Essen Lieferplattformen bei jeder Bestellung bei dir mit?", type: 'text' },
+        'hero_tagline': { text: "30 % jeder Onlinebestellung geht an Lieferplattformen —<br> Geld, das Dir als Restaurantinhaber fehlt.<br><strong>noms</strong> gibt Dir die Kontrolle zurück und macht aus teuren Lieferplattform-Bestellern profitable Direktgäste.", type: 'html' },
+        'cta-hero': { text: "Umsatz-Potenzial zeigen lassen", type: 'text' },
+        'hero_note': { text: "100% kostenlos • Nur 15 Min. • Keine Verpflichtung", type: 'text' },
+        'network_customers': { text: "Bereits Kunden unseres exklusiven Premium-Liefernetzwerks", type: 'text' },
+        'pain_heading': { text: "Warum verschenkst du freiwillig jeden 3. Teller?", type: 'text' },
+        'pain_p1': { text: "Liefer-Apps kassieren pro Monat <strong>tausende Euro an Provisionen</strong> – Geld, das direkt <strong>von deinem Gewinn</strong> abgeht.", type: 'html' },
+        'pain_p2': { text: "Mit deinem <span class=\"font-bold\">eigenen Bestellsystem</span> bleibt das Geld bei dir.", type: 'html' },
+        'compare_title': { text: "Deine Einsparungen pro Monat", type: 'text' },
+        'th_orders': { text: "Bestellungen", type: 'text' },
+        'th_commission': { text: "Liefer-Apps (30 %)", type: 'text' },
+        'th_noms': { text: "Eigenes Bestellsystem (0%)", type: 'text' },
+        'compare_basis': { text: "Basis: Ø-Warenkorb 30 €, noms zzgl. feste Servicegebühr (149 €/Monat + 5 €/Lieferung)", type: 'text' },
+        'calc_heading': { text: "Bereit, deinen Gewinn sofort zu erhöhen?", type: 'text' },
+        'second-cta': { text: "Umsatz-Potenzial zeigen lassen", type: 'text' },
+        'feature_heading': { text: "Warum Restaurants noms lieben", type: 'text' },
+        'feature_price_title': { text: "💶 Ein simpler, fester Preis", type: 'text' },
+        'feature_price_desc': { text: "149 €/Monat Grundgebühr – transparente, berechnbare Kosten bei voller Marge.", type: 'text' },
+        'feature_delivery_title': { text: "🚚 5 € Festpreis-Lieferung", type: 'text' },
+        'feature_delivery_desc': { text: "Unabhängig vom Bestellwert & deutschlandweit verfügbar.", type: 'text' },
+        'feature_data_title': { text: "📊 Volle Kundendaten", type: 'text' },
+        'feature_data_desc': { text: "Datenbesitz-Garantie – du baust deine Stammkundschaft auf, nicht die Plattform.", type: 'text' },
+        'feature_marketing_title': { text: "🔄 Automatisches Marketing", type: 'text' },
+        'feature_marketing_desc': { text: "Segmentierte E-Mails steigern Wiederbestellungen um bis zu 60 %.", type: 'text' },
+        'feature_fast_title': { text: "⚡️ In 24 h live", type: 'text' },
+        'feature_fast_desc': { text: "Anmeldung heute, Bestellungen morgen – super-schnelles Onboarding.", type: 'text' },
+        'feature_guarantee_title': { text: "🏆 Geld-zurück-Garantie", type: 'text' },
+        'feature_guarantee_desc': { text: "Verdienst du in 2 Monaten weniger als du zahlst, erstatten wir 100 %.", type: 'text' },
+        'testimonial_headline': { text: "Unsere Kunden sind überzeugt", type: 'text'},
+        'testimonial_quote': { text: "„Mit noms hat sich unser direkter Onlineumsatz mehr als verdoppelt, wir sparen jeden Monat hunderte Euro an Plattformgebühren und verfügen jetzt über ein System, das unser Online-Wachstum aktiv fördert. Weil wir nun endlich Kundendaten besitzen, können wir gezielte Aktionen starten – und die Leute kommen immer wieder. Diese kleinen Stellschrauben haben uns geholfen, unseren Außerhausumsatz profitabel aufs nächste Level zu bringen.“", type: 'text' },
+        'testimonial_author': { text: "Trattoria Zoe, Berlin, Prenzlauer Berg", type: 'text' },
+        'how_heading': { text: "In 3 Schritten live", type: 'text' },
+        'step1_title': { text: "1. Anmeldung", type: 'text' },
+        'step1_desc': { text: "Kostenlos und schnell Zugang zu deinem noms erhalten.", type: 'text' },
+        'step2_title': { text: "2. Einrichtung", type: 'text' },
+        'step2_desc': { text: "Wir listen und optimieren dein Restaurant.", type: 'text' },
+        'step3_title': { text: "3. Umsatz machen", type: 'text' },
+        'step3_desc': { text: "Profitiere sofort von provisionsfreien Bestellungen.", type: 'text' },
+        'guarantees_heading': { text: "0 % Risiko. 100 % Fairness.", type: 'text' },
+        'guarantee_moneyback': { text: "💰 <strong>Geld-zurück:</strong> Verdiene in 2 Monaten weniger? Wir erstatten.", type: 'html' },
+        'guarantee_monthly': { text: "🔁 <strong>Monatlich kündbar:</strong> Bleib, weil du willst – nicht weil du musst.", type: 'html' },
+        'guarantee_data': { text: "📥 <strong>Deine Daten:</strong> Gäste & Inhalte bleiben dein Eigentum.", type: 'html' },
+        'guarantee_referral': { text: "👥 <strong>Empfehlung:</strong> Jeder geworbene Kollege = 1 Gratismonat.", type: 'html' },
+        'badge_berlin': { text: "Berliner Unternehmen", type: 'text' },
+        'badge_dodo': { text: "Premium-Liefernetzwerk", type: 'text' },
+        'badge_ssl': { text: "SSL-Sichere Zahlungen", type: 'text' },
+        'badge_moneyback': { text: "60 Tage Geld-Zurück-Garantie", type: 'text' },
+        'faq_heading': { text: "Häufige Fragen", type: 'text' },
+        'faq_q1': { text: "Wirklich provisionsfrei? Wo ist der Haken?", type: 'text' },
+        'faq_a1': { text: "Absolut, 0,0 %! Restaurants haben es schon schwer genug, deswegen haben wir jeden Teil unseres Produkts mit einem Ziel entwickelt: deinen Umsatz zu steigern!", type: 'text' },
+        'faq_q2': { text: "Nutzt ihr die selben Fahrer wie Wolt, Uber Eats oder Lieferando?", type: 'text' },
+        'faq_a2': { text: "Nein. Wir arbeiten mit dem Premium-Lieferdienst DoDo (liefert bereits für REWE, KFC, Burger King etc.) zusammen, um Restaurants eine hohe Lieferqualität anbieten zu können. Dein liebevoll zubereitetes Essen soll schließlich appetitlich und ansprechend bei deinen Gästen ankommen.", type: 'text' },
+        'faq_q3': { text: "Brauche ich eigene Fahrer?", type: 'text' },
+        'faq_a3': { text: "Nein. Unser Lieferpartner DoDo übernimmt die Lieferung bundesweit.", type: 'text' },
+        'faq_q4': { text: "Welche Vertragsbindung habe ich?", type: 'text' },
+        'faq_a4': { text: "Monatlich kündbar – ohne Gebühren und du behälst natürlich alle Kundendaten, Templates und Fotos.", type: 'text' },
+        'faq_q5': { text: "Wie lange dauert die Einrichtung?", type: 'text' },
+        'faq_a5': { text: "In der Regel bist du in weniger als 24 Stunden online. Die Optimierung deines Google Business Profils findet innerhalb von 7 Werktagen statt.", type: 'text' },
+        'faq_q6': { text: "Wie und wann erhalte ich meine Umsätze?", type: 'text' },
+        'faq_a6': { text: "Sofort. Jede Bestellung geht ohne Umwege direkt an dich. Alle Zahlungen laufen direkt auf dein Konto; wir behalten keine Provision. Jede Zahlung läuft über unseren sicheren Zahlungsdienstleister mollie", type: 'text' },
+        'secondary_heading': { text: "Spare ab der ersten Bestellung – starte jetzt kostenlos.", type: 'text' },
+        'secondary-cta': { text: "Umsatz-Potenzial zeigen lassen", type: 'text' },
+        'secondary_note': { text: "100% kostenlos • Nur 15 Min. • Keine Verpflichtung", type: 'text' },
+        'footer_text': { text: "© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • 015679 01 10 01", type: 'text' },
+        'premium_network_heading': { text: "Unser Premium-Liefernetzwerk", type: 'text' },
+        'premium_network_p1': { text: "Profitier von einem bewährten Netzwerk (<strong>99,1 % Zustellerfolg</strong>) – dasselbe, auf das KFC, Burger King & Co. setzen.", type: 'html' },
+        'premium_network_p2': { text: "Deine Gerichte kommen pünktlich und appetitlich an – garantiert.", type: 'text' }
+      },
+      'en': {
+        'hero_heading': { text: "Are delivery platforms taking a bite out of every order?", type: 'text' },
+        'hero_tagline': { text: "30% of every online order goes to delivery platforms —<br> money that you as a restaurant owner are missing out on.<br><strong>noms</strong> gives you back control and turns expensive delivery platform orders into profitable direct customers.", type: 'html' },
+        'cta-hero': { text: "Show revenue potential", type: 'text' },
+        'hero_note': { text: "100% free • Only 15 min. • No obligation", type: 'text' },
+        'network_customers': { text: "Already customers of our exclusive premium delivery network", type: 'text' },
+        'pain_heading': { text: "Why are you voluntarily giving away every 3rd plate?", type: 'text' },
+        'pain_p1': { text: "Delivery apps collect <strong>thousands of euros in commissions</strong> per month – money that directly <strong>deducts from your profit</strong>.", type: 'html' },
+        'pain_p2': { text: "With your <span class=\"font-bold\">own ordering system</span>, the money stays with you.", type: 'html' },
+        'compare_title': { text: "Your savings per month", type: 'text' },
+        'th_orders': { text: "Orders", type: 'text' },
+        'th_commission': { text: "Delivery apps (30%)", type: 'text' },
+        'th_noms': { text: "Own ordering system (0%)", type: 'text' },
+        'compare_basis': { text: "Basis: Average basket 30 €, noms plus fixed service fee (149 €/month + 5 €/delivery)", type: 'text' },
+        'calc_heading': { text: "Ready to increase your profit immediately?", type: 'text' },
+        'second-cta': { text: "Show revenue potential", type: 'text' },
+        'feature_heading': { text: "Why restaurants love noms", type: 'text' },
+        'feature_price_title': { text: "💶 A simple, fixed price", type: 'text' },
+        'feature_price_desc': { text: "149 €/month basic fee – transparent, predictable costs with full margin.", type: 'text' },
+        'feature_delivery_title': { text: "🚚 5 € flat-rate delivery", type: 'text' },
+        'feature_delivery_desc': { text: "Regardless of order value & available nationwide in Germany.", type: 'text' },
+        'feature_data_title': { text: "📊 Full customer data", type: 'text' },
+        'feature_data_desc': { text: "Data ownership guarantee – you build your regular customer base, not the platform.", type: 'text' },
+        'feature_marketing_title': { text: "🔄 Automatic marketing", type: 'text' },
+        'feature_marketing_desc': { text: "Segmented emails increase repeat orders by up to 60%.", type: 'text' },
+        'feature_fast_title': { text: "⚡️ Live in 24 hours", type: 'text' },
+        'feature_fast_desc': { text: "Sign up today, orders tomorrow – super-fast onboarding.", type: 'text' },
+        'feature_guarantee_title': { text: "🏆 Money-back guarantee", type: 'text' },
+        'feature_guarantee_desc': { text: "If you earn less in 2 months than you pay, we refund 100%.", type: 'text' },
+        'testimonial_headline': { text: "Our customers are impressed", type: 'text'},
+        'testimonial_quote': { text: "\"With noms, our direct online sales have more than doubled, we save hundreds of euros every month on platform fees, and now have a system that actively promotes our online growth. Because we finally own customer data, we can launch targeted campaigns – and people keep coming back. These small adjustments have helped us take our off-premise sales to the next level profitably.\"", type: 'text' },
+        'testimonial_author': { text: "Trattoria Zoe, Berlin, Prenzlauer Berg", type: 'text' },
+        'how_heading': { text: "Live in 3 steps", type: 'text' },
+        'step1_title': { text: "1. Registration", type: 'text' },
+        'step1_desc': { text: "Get free and quick access to your noms.", type: 'text' },
+        'step2_title': { text: "2. Setup", type: 'text' },
+        'step2_desc': { text: "We list and optimize your restaurant.", type: 'text' },
+        'step3_title': { text: "3. Generate revenue", type: 'text' },
+        'step3_desc': { text: "Benefit immediately from commission-free orders.", type: 'text' },
+        'guarantees_heading': { text: "0% risk. 100% fairness.", type: 'text' },
+        'guarantee_moneyback': { text: "💰 <strong>Money back:</strong> Earn less in 2 months? We refund.", type: 'html' },
+        'guarantee_monthly': { text: "🔁 <strong>Monthly cancellation:</strong> Stay because you want to – not because you have to.", type: 'html' },
+        'guarantee_data': { text: "📥 <strong>Your data:</strong> Guests & content remain your property.", type: 'html' },
+        'guarantee_referral': { text: "👥 <strong>Referral:</strong> Each referred colleague = 1 free month.", type: 'html' },
+        'badge_berlin': { text: "Berlin company", type: 'text' },
+        'badge_dodo': { text: "Premium delivery network", type: 'text' },
+        'badge_ssl': { text: "SSL-secure payments", type: 'text' },
+        'badge_moneyback': { text: "60-day money-back guarantee", type: 'text' },
+        'faq_heading': { text: "Frequently asked questions", type: 'text' },
+        'faq_q1': { text: "Really commission-free? What's the catch?", type: 'text' },
+        'faq_a1': { text: "Absolutely, 0.0%! Restaurants already have it tough enough, which is why we've developed every part of our product with one goal: to increase your revenue!", type: 'text' },
+        'faq_q2': { text: "Do you use the same drivers as Wolt, Uber Eats or Lieferando?", type: 'text' },
+        'faq_a2': { text: "No. We work with the premium delivery service DoDo (already delivering for REWE, KFC, Burger King, etc.) to offer restaurants high delivery quality. Your lovingly prepared food should arrive at your guests' homes appetizing and appealing.", type: 'text' },
+        'faq_q3': { text: "Do I need my own drivers?", type: 'text' },
+        'faq_a3': { text: "No. Our delivery partner DoDo handles delivery nationwide.", type: 'text' },
+        'faq_q4': { text: "What contractual commitment do I have?", type: 'text' },
+        'faq_a4': { text: "Monthly cancellation – without fees and you naturally keep all customer data, templates, and photos.", type: 'text' },
+        'faq_q5': { text: "How long does the setup take?", type: 'text' },
+        'faq_a5': { text: "Usually, you are online in less than 24 hours. The optimization of your Google Business Profile takes place within 7 working days.", type: 'text' },
+        'faq_q6': { text: "How and when do I receive my revenues?", type: 'text' },
+        'faq_a6': { text: "Immediately. Every order goes directly to you without detours. All payments go directly to your account; we do not retain any commission. Every payment is processed through our secure payment service provider Mollie.", type: 'text' },
+        'secondary_heading': { text: "Save from the first order – start now for free.", type: 'text' },
+        'secondary-cta': { text: "Show revenue potential", type: 'text' },
+        'secondary_note': { text: "100% free • Only 15 min. • No obligation", type: 'text' },
+        'footer_text': { text: "© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • 015679 01 10 01", type: 'text' },
+        'premium_network_heading': { text: "Our Premium Delivery Network", type: 'text' },
+        'premium_network_p1': { text: "Benefit from a proven network (<strong>99.1% delivery success</strong>) – the same one that KFC, Burger King & Co. rely on.", type: 'html' },
+        'premium_network_p2': { text: "Your dishes arrive on time and appetizing – guaranteed.", type: 'text' }
 
-    pain_heading: 'Every 3rd plate? Wasted.',
-    pain_p1: 'Delivery platforms swallow <strong>30 % commission</strong>. At just 100 orders × €50 that’s <strong>€1,500</strong> per month.',
-    pain_p2: 'With your <span class="font-bold">own</span> ordering system, the money stays with you.',
-
-    compare_title: 'Cost comparison / month',
-    th_orders: 'Orders',
-    th_commission: '30 % commission',
-    th_noms: 'Own system',
-    compare_basis: 'Basis: €149/month + €5/delivery, avg. basket €30',
-
-    calc_heading: 'Calculate how much you can save with noms',
-    calc_label_orders: 'How many delivery-platform orders do you get per month?',
-    calc_label_value: 'What is the approximate average order value?',
-    calcBtn: 'Calculate savings',
-
-    premium_network_heading: 'Our Premium Delivery Network',
-    premium_network_text: 'In addition to our unbeatable rates, benefit from DoDo’s proven delivery network. They already deliver reliably for <strong>KFC</strong>, <strong>Burger King</strong>, <strong>knuspr.de</strong> and <strong>REWE Group</strong>—with an impressive <strong>99.1 %</strong> success rate!',
-    premium_network_subtext: 'Rely on a mature system that gets your dishes there on time and keeps your guests delighted.',
-
-    badge_berlin: 'Berlin-based company',
-    badge_dodo: 'Premium delivery network',
-    badge_ssl: 'SSL-secure payments',
-    badge_moneyback: '60-day money-back guarantee',
-
-    feature_heading: 'Why restaurants love noms',
-    feature_price_title: '💶 One simple, fixed price',
-    feature_price_desc: '€149/month base fee—transparent, predictable costs at full margin.',
-    feature_delivery_title: '🚚 €5 flat-rate delivery',
-    feature_delivery_desc: 'Regardless of order value & available Germany-wide.',
-    feature_data_title: '📊 Full customer data',
-    feature_data_desc: 'Data-ownership guarantee—you build your loyal customer base, not the platform.',
-    feature_marketing_title: '🔄 Automated marketing',
-    feature_marketing_desc: 'Segmented emails boost repeat orders by up to 60 %.',
-    feature_fast_title: '⚡️ Live in 24 h',
-    feature_fast_desc: 'Sign up today, take orders tomorrow—super-fast onboarding.',
-    feature_guarantee_title: '🏆 Money-back guarantee',
-    feature_guarantee_desc: 'Earn less in 2 months? We refund 100 %.',
-
-    testimonial_quote: '“The first orders via noms came right after setup, which was very impressive. Great service—noms definitely paid off for us!”',
-    testimonial_author: 'Mozzarella & Pomodoro, Berlin',
-
-    how_heading: 'Live in 3 steps',
-    step1_title: '1. Register',
-    step1_desc: 'Fill out the form & get dashboard access—no credit card needed.',
-    step2_title: '2. Appear in the app',
-    step2_desc: 'We list your restaurant in our marketplace app & optimize your digital sales channels.',
-    step3_title: '3. Collect orders',
-    step3_desc: 'Customers order, our delivery network delivers—you keep the full order value.',
-
-    guarantees_heading: '0 % risk. 100 % fairness.',
-    guarantee_moneyback: '💰 <strong>Money-back:</strong> Earn less in 2 months? We refund.',
-    guarantee_monthly: '🔁 <strong>Monthly cancelation:</strong> Stay because you want to—not because you have to.',
-    guarantee_data: '📥 <strong>Your data:</strong> Guests & content remain your property.',
-    guarantee_referral: '👥 <strong>Referral:</strong> Every colleague you refer = 1 free month.',
-
-    faq_heading: 'Frequently asked questions',
-    faq_q1: 'Really commission-free? Where’s the catch?',
-    faq_a1: 'Absolutely 0.0 %! Restaurants already have it tough, so we built every part of our product with one goal: increasing your revenue!',
-    faq_q2: 'Do you use the same drivers as Wolt, Uber Eats or Lieferando?',
-    faq_a2: 'No. We partner with DoDo (already delivering for REWE, KFC, Burger King etc.) to ensure high delivery quality.',
-    faq_q3: 'Do I need my own drivers?',
-    faq_a3: 'No. Our partner DoDo handles delivery nationwide.',
-    faq_q4: 'What contractual commitment do I have?',
-    faq_a4: 'Monthly cancelation—no fees and you keep all customer data, templates and photos.',
-    faq_q5: 'How long does setup take?',
-    faq_a5: 'You’re online in under 24 h. Google Business profile optimization within 7 working days.',
-    faq_q6: 'How and when do I receive my revenues?',
-    faq_a6: 'Immediately. Every order goes straight to you; we take no commission. Processed via our secure provider mollie.',
-
-    secondary_heading: 'Save from the first order—start for free now.',
-    secondary_cta: 'Book a free demo',
-    secondary_note: 'No credit card • Cancel anytime',
-
-    footer_text: '© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • +49 15679 01 10 01'
+      },
+'es': {
+    'hero_heading': { text: "¿Están las plataformas de entrega tomando un bocado de cada pedido?", type: 'text' },
+    'hero_tagline': { text: "El 30% de cada pedido en línea va a las plataformas de entrega —<br> dinero que tú, como propietario de un restaurante, estás perdiendo.<br><strong>noms</strong> te devuelve el control y convierte los costosos pedidos de plataformas de entrega en clientes directos rentables.", type: 'html' },
+    'cta-hero': { text: "Mostrar potencial de ingresos", type: 'text' },
+    'hero_note': { text: "100% gratis • Solo 15 min. • Sin obligación", type: 'text' },
+    'network_customers': { text: "Ya son clientes de nuestra red de entrega premium exclusiva", type: 'text' },
+    'pain_heading': { text: "¿Por qué estás regalando voluntariamente cada tercer plato?", type: 'text' },
+    'pain_p1': { text: "Las aplicaciones de entrega recaudan <strong>miles de euros en comisiones</strong> por mes – dinero que directamente <strong>deduce de tu beneficio</strong>.", type: 'html' },
+    'pain_p2': { text: "Con tu <span class=\"font-bold\">propio sistema de pedidos</span>, el dinero se queda contigo.", type: 'html' },
+    'compare_title': { text: "Tus ahorros por mes", type: 'text' },
+    'th_orders': { text: "Pedidos", type: 'text' },
+    'th_commission': { text: "Aplicaciones de entrega (30%)", type: 'text' },
+    'th_noms': { text: "Propio sistema de pedidos (0%)", type: 'text' },
+    'compare_basis': { text: "Base: Cesta promedio 30 €, noms más tarifa de servicio fija (149 €/mes + 5 €/entrega)", type: 'text' },
+    'calc_heading': { text: "¿Listo para aumentar tu beneficio inmediatamente?", type: 'text' },
+    'second-cta': { text: "Mostrar potencial de ingresos", type: 'text' },
+    'feature_heading': { text: "Por qué los restaurantes aman noms", type: 'text' },
+    'feature_price_title': { text: "💶 Un precio simple y fijo", type: 'text' },
+    'feature_price_desc': { text: "149 €/mes de tarifa básica – costos transparentes y predecibles con margen completo.", type: 'text' },
+    'feature_delivery_title': { text: "🚚 Entrega a tarifa plana de 5 €", type: 'text' },
+    'feature_delivery_desc': { text: "Independientemente del valor del pedido y disponible en toda Alemania.", type: 'text' },
+    'feature_data_title': { text: "📊 Datos completos de los clientes", type: 'text' },
+    'feature_data_desc': { text: "Garantía de propiedad de datos – construyes tu base de clientes regulares, no la plataforma.", type: 'text' },
+    'feature_marketing_title': { text: "🔄 Marketing automático", type: 'text' },
+    'feature_marketing_desc': { text: "Los correos electrónicos segmentados aumentan los pedidos repetidos hasta en un 60%.", type: 'text' },
+    'feature_fast_title': { text: "⚡️ En vivo en 24 horas", type: 'text' },
+    'feature_fast_desc': { text: "Regístrate hoy, pedidos mañana – incorporación súper rápida.", type: 'text' },
+    'feature_guarantee_title': { text: "🏆 Garantía de devolución de dinero", type: 'text' },
+    'feature_guarantee_desc': { text: "Si ganas menos en 2 meses de lo que pagas, te devolvemos el 100%.", type: 'text' },
+    'testimonial_headline': { text: "Nuestros clientes están impresionados", type: 'text'},
+    'testimonial_quote': { text: "\"Con noms, nuestras ventas directas en línea se han más que duplicado, ahorramos cientos de euros cada mes en tarifas de plataforma y ahora tenemos un sistema que promueve activamente nuestro crecimiento en línea. Porque finalmente poseemos datos de clientes, podemos lanzar campañas dirigidas – y la gente sigue volviendo. Estos pequeños ajustes nos han ayudado a llevar nuestras ventas fuera del local al siguiente nivel de manera rentable.\"", type: 'text' },
+    'testimonial_author': { text: "Trattoria Zoe, Berlin, Prenzlauer Berg", type: 'text' },
+    'how_heading': { text: "En vivo en 3 pasos", type: 'text' },
+    'step1_title': { text: "1. Registro", type: 'text' },
+    'step1_desc': { text: "Obtén acceso gratuito y rápido a tu noms.", type: 'text' },
+    'step2_title': { text: "2. Configuración", type: 'text' },
+    'step2_desc': { text: "Listamos y optimizamos tu restaurante.", type: 'text' },
+    'step3_title': { text: "3. Generar ingresos", type: 'text' },
+    'step3_desc': { text: "Benefíciate inmediatamente de pedidos sin comisiones.", type: 'text' },
+    'guarantees_heading': { text: "0% riesgo. 100% equidad.", type: 'text' },
+    'guarantee_moneyback': { text: "💰 <strong>Devolución de dinero:</strong> ¿Ganas menos en 2 meses? Te reembolsamos.", type: 'html' },
+    'guarantee_monthly': { text: "🔁 <strong>Cancelación mensual:</strong> Quédate porque quieres – no porque tengas que.", type: 'html' },
+    'guarantee_data': { text: "📥 <strong>Tus datos:</strong> Los invitados y el contenido siguen siendo de tu propiedad.", type: 'html' },
+    'guarantee_referral': { text: "👥 <strong>Referencia:</strong> Cada colega referido = 1 mes gratis.", type: 'html' },
+    'badge_berlin': { text: "Empresa de Berlín", type: 'text' },
+    'badge_dodo': { text: "Red de entrega premium", type: 'text' },
+    'badge_ssl': { text: "Pagos seguros SSL", type: 'text' },
+    'badge_moneyback': { text: "Garantía de devolución de dinero de 60 días", type: 'text' },
+    'faq_heading': { text: "Preguntas frecuentes", type: 'text' },
+    'faq_q1': { text: "¿Realmente sin comisiones? ¿Cuál es el truco?", type: 'text' },
+    'faq_a1': { text: "¡Absolutamente, 0,0%! Los restaurantes ya lo tienen bastante difícil, por eso hemos desarrollado cada parte de nuestro producto con un objetivo: ¡aumentar tus ingresos!", type: 'text' },
+    'faq_q2': { text: "¿Utilizan los mismos conductores que Wolt, Uber Eats o Lieferando?", type: 'text' },
+    'faq_a2': { text: "No. Trabajamos con el servicio de entrega premium DoDo (que ya entrega para REWE, KFC, Burger King, etc.) para ofrecer a los restaurantes una alta calidad de entrega. Tu comida preparada con amor debe llegar a casa de tus invitados apetitosa y atractiva.", type: 'text' },
+    'faq_q3': { text: "¿Necesito mis propios conductores?", type: 'text' },
+    'faq_a3': { text: "No. Nuestro socio de entrega DoDo se encarga de la entrega a nivel nacional.", type: 'text' },
+    'faq_q4': { text: "¿Qué compromiso contractual tengo?", type: 'text' },
+    'faq_a4': { text: "Cancelación mensual – sin tarifas y, naturalmente, conservas todos los datos de los clientes, plantillas y fotos.", type: 'text' },
+    'faq_q5': { text: "¿Cuánto tiempo tarda la configuración?", type: 'text' },
+    'faq_a5': { text: "Por lo general, estás en línea en menos de 24 horas. La optimización de tu Perfil de Negocio de Google se realiza en un plazo de 7 días laborables.", type: 'text' },
+    'faq_q6': { text: "¿Cómo y cuándo recibo mis ingresos?", type: 'text' },
+    'faq_a6': { text: "Inmediatamente. Cada pedido va directamente a ti sin rodeos. Todos los pagos van directamente a tu cuenta; no retenemos ninguna comisión. Cada pago se procesa a través de nuestro proveedor de servicios de pago seguro Mollie.", type: 'text' },
+    'secondary_heading': { text: "Ahorra desde el primer pedido – empieza ahora gratis.", type: 'text' },
+    'secondary-cta': { text: "Mostrar potencial de ingresos", type: 'text' },
+    'secondary_note': { text: "100% gratis • Solo 15 min. • Sin obligación", type: 'text' },
+    'footer_text': { text: "© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • 015679 01 10 01", type: 'text' },
+    'premium_network_heading': { text: "Nuestra Red de Entrega Premium", type: 'text' },
+    'premium_network_p1': { text: "Benefíciate de una red probada (<strong>99,1% de éxito en entregas</strong>) – la misma en la que confían KFC, Burger King y compañía.", type: 'html' },
+    'premium_network_p2': { text: "Tus platos llegan a tiempo y apetitosos – garantizado.", type: 'text' }
   },
-
-  es: {
-    hero_heading: 'Más pedidos online<br>en condiciones justas',
-    hero_tagline: 'noms facilita a los propietarios de restaurantes muy ocupados aumentar las ventas directas en línea, reducir los costos de entrega y fomentar pedidos repetidos con campañas automatizadas de email y SMS.',
-    'cta-hero': 'Reserva una demo gratuita',
-    hero_note: 'Garantía de devolución • Sin tarjeta de crédito • Cancelación en cualquier momento',
-
-    pain_heading: '¿Cada tercer plato? Desperdiciado.',
-    pain_p1: 'Las plataformas de entrega se llevan un <strong>30 % de comisión</strong>. Con solo 100 pedidos × 50 € son <strong>1.500 €</strong> al mes.',
-    pain_p2: 'Con tu <span class="font-bold">propio</span> sistema de pedidos, el dinero se queda contigo.',
-
-    compare_title: 'Comparación de costes / mes',
-    th_orders: 'Pedidos',
-    th_commission: '30 % comisión',
-    th_noms: 'Sistema propio',
-    compare_basis: 'Base: 149 €/mes + 5 €/entrega, cesta media 30 €',
-
-    calc_heading: 'Calcula cuánto puedes ahorrar con noms',
-    calc_label_orders: '¿Cuántos pedidos de plataformas de entrega recibes al mes?',
-    calc_label_value: '¿Cuál es el valor medio aproximado de cada pedido?',
-    calcBtn: 'Calcular ahorro',
-
-    premium_network_heading: 'Nuestra red de entrega premium',
-    premium_network_text: 'Además de nuestras condiciones inmejorables, te beneficia de la red probada de DoDo. Ya entregan de forma fiable para <strong>KFC</strong>, <strong>Burger King</strong>, <strong>knuspr.de</strong> y <strong>REWE Group</strong>—con un impresionante éxito del <strong>99,1 %</strong> en las entregas.',
-    premium_network_subtext: 'Confía en un sistema consolidado que entrega tus platos puntualmente y encanta a tus clientes.',
-
-    badge_berlin: 'Empresa con sede en Berlín',
-    badge_dodo: 'Red de entrega premium',
-    badge_ssl: 'Pagos SSL seguros',
-    badge_moneyback: 'Garantía de devolución de 60 días',
-
-    feature_heading: 'Por qué los restaurantes adoran noms',
-    feature_price_title: '💶 Un precio fijo y simple',
-    feature_price_desc: '149 €/mes de cuota base—costos transparentes con margen completo.',
-    feature_delivery_title: '🚚 Entrega tarifa plana de 5 €',
-    feature_delivery_desc: 'Independientemente del valor del pedido y disponible en toda Alemania.',
-    feature_data_title: '📊 Datos completos del cliente',
-    feature_data_desc: 'Garantía de propiedad de datos—creas tu base de clientes fieles, no la plataforma.',
-    feature_marketing_title: '🔄 Marketing automatizado',
-    feature_marketing_desc: 'Los correos segmentados aumentan los pedidos repetidos hasta un 60 %.',
-    feature_fast_title: '⚡️ En vivo en 24 h',
-    feature_fast_desc: 'Regístrate hoy, recibe pedidos mañana—inserción ultrarrápida.',
-    feature_guarantee_title: '🏆 Garantía de devolución de dinero',
-    feature_guarantee_desc: '¿Ganas menos en 2 meses? Te reembolsamos el 100 %.',
-
-    testimonial_quote: '«Los primeros pedidos vía noms llegaron justo después de la configuración; fue muy impresionante. ¡Excelente servicio—noms definitivamente valió la pena para nosotros!»',
-    testimonial_author: 'Mozzarella & Pomodoro, Berlín',
-
-    how_heading: 'En vivo en 3 pasos',
-    step1_title: '1. Regístrate',
-    step1_desc: 'Rellena el formulario y accede al panel—sin tarjeta de crédito.',
-    step2_title: '2. Aparece en la app',
-    step2_desc: 'Publicamos tu restaurante en nuestra app marketplace y optimizamos tus canales digitales.',
-    step3_title: '3. Recibe pedidos',
-    step3_desc: 'Los clientes piden, nuestra red de reparto entrega—tú te quedas con el valor total.',
-
-    guarantees_heading: '0 % riesgo. 100 % equidad.',
-    guarantee_moneyback: '💰 <strong>Devolución de dinero:</strong> ¿Ganas menos en 2 meses? Te devolvemos el dinero.',
-    guarantee_monthly: '🔁 <strong>Cancelación mensual:</strong> Quédate porque quieres—no porque debas.',
-    guarantee_data: '📥 <strong>Tus datos:</strong> Clientes y contenidos siguen siendo tuyos.',
-    guarantee_referral: '👥 <strong>Referencias:</strong> Cada colega referido = 1 mes gratis.',
-
-    faq_heading: 'Preguntas frecuentes',
-    faq_q1: '¿Realmente sin comisión? ¿Dónde está el truco?',
-    faq_a1: '¡Absolutamente 0,0 %! Los restaurantes ya tienen bastante difícil, por eso diseñamos cada parte de nuestro producto con un objetivo: ¡aumentar tus ingresos!',  
-    faq_q2: '¿Usáis los mismos repartidores que Wolt, Uber Eats o Lieferando?',  
-    faq_a2: 'No. Colaboramos con DoDo (ya entrega para REWE, KFC, Burger King, etc.) para garantizar máxima calidad de entrega.',  
-    faq_q3: '¿Necesito mis propios repartidores?',  
-    faq_a3: 'No. Nuestro socio DoDo se encarga de las entregas en todo el país.',  
-    faq_q4: '¿Qué compromiso contractual tengo?',  
-    faq_a4: 'Cancelación mensual—sin tasas y conservas todos los datos de clientes, plantillas y fotos.',  
-    faq_q5: '¿Cuánto tarda la puesta en marcha?',  
-    faq_a5: 'Normalmente en menos de 24 h. Optimización de Google Business en 7 días hábiles.',  
-    faq_q6: '¿Cómo y cuándo recibo mis ingresos?',  
-    faq_a6: 'Inmediatamente. Cada pedido va directo a ti—no tomamos comisión. Procesado via mollie.',
-
-    secondary_heading: 'Ahorra desde el primer pedido—comienza gratis ahora.',
-    secondary_cta: 'Reserva demo gratuita',
-    secondary_note: 'Sin tarjeta de crédito • Cancela cuando quieras',
-
-    footer_text: '© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • +49 15679 01 10 01'
+  'it': {
+    'hero_heading': { text: "Le piattaforme di consegna stanno prendendo un morso da ogni ordine?", type: 'text' },
+    'hero_tagline': { text: "Il 30% di ogni ordine online va alle piattaforme di consegna —<br> soldi che tu, come proprietario di un ristorante, stai perdendo.<br><strong>noms</strong> ti restituisce il controllo e trasforma gli costosi ordini dalle piattaforme di consegna in clienti diretti redditizi.", type: 'html' },
+    'cta-hero': { text: "Mostra potenziale di reddito", type: 'text' },
+    'hero_note': { text: "100% gratuito • Solo 15 min. • Nessun obbligo", type: 'text' },
+    'network_customers': { text: "Già clienti della nostra esclusiva rete di consegna premium", type: 'text' },
+    'pain_heading': { text: "Perché stai volontariamente regalando ogni terzo piatto?", type: 'text' },
+    'pain_p1': { text: "Le app di consegna raccolgono <strong>migliaia di euro in commissioni</strong> al mese – soldi che direttamente <strong>deducono dal tuo profitto</strong>.", type: 'html' },
+    'pain_p2': { text: "Con il tuo <span class=\"font-bold\">proprio sistema di ordinazione</span>, i soldi rimangono con te.", type: 'html' },
+    'compare_title': { text: "I tuoi risparmi al mese", type: 'text' },
+    'th_orders': { text: "Ordini", type: 'text' },
+    'th_commission': { text: "App di consegna (30%)", type: 'text' },
+    'th_noms': { text: "Proprio sistema di ordinazione (0%)", type: 'text' },
+    'compare_basis': { text: "Base: Carrello medio 30 €, noms più tariffa di servizio fissa (149 €/mese + 5 €/consegna)", type: 'text' },
+    'calc_heading': { text: "Pronto ad aumentare il tuo profitto immediatamente?", type: 'text' },
+    'second-cta': { text: "Mostra potenziale di reddito", type: 'text' },
+    'feature_heading': { text: "Perché i ristoranti amano noms", type: 'text' },
+    'feature_price_title': { text: "💶 Un prezzo semplice e fisso", type: 'text' },
+    'feature_price_desc': { text: "149 €/mese di tariffa base – costi trasparenti e prevedibili con margine completo.", type: 'text' },
+    'feature_delivery_title': { text: "🚚 Consegna a tariffa fissa di 5 €", type: 'text' },
+    'feature_delivery_desc': { text: "Indipendentemente dal valore dell'ordine e disponibile in tutta la Germania.", type: 'text' },
+    'feature_data_title': { text: "📊 Dati completi dei clienti", type: 'text' },
+    'feature_data_desc': { text: "Garanzia di proprietà dei dati – costruisci la tua base di clienti regolari, non la piattaforma.", type: 'text' },
+    'feature_marketing_title': { text: "🔄 Marketing automatico", type: 'text' },
+    'feature_marketing_desc': { text: "Le email segmentate aumentano gli ordini ripetuti fino al 60%.", type: 'text' },
+    'feature_fast_title': { text: "⚡️ Live in 24 ore", type: 'text' },
+    'feature_fast_desc': { text: "Iscriviti oggi, ordini domani – onboarding super veloce.", type: 'text' },
+    'feature_guarantee_title': { text: "🏆 Garanzia di rimborso", type: 'text' },
+    'feature_guarantee_desc': { text: "Se guadagni meno in 2 mesi di quanto paghi, ti rimborsiamo il 100%.", type: 'text' },
+    'testimonial_headline': { text: "I nostri clienti sono impressionati", type: 'text'},
+    'testimonial_quote': { text: "\"Con noms, le nostre vendite dirette online sono più che raddoppiate, risparmiamo centinaia di euro ogni mese in commissioni sulle piattaforme e ora abbiamo un sistema che promuove attivamente la nostra crescita online. Poiché finalmente possediamo i dati dei clienti, possiamo lanciare campagne mirate – e le persone continuano a tornare. Questi piccoli aggiustamenti ci hanno aiutato a portare le nostre vendite fuori sede al livello successivo in modo redditizio.\"", type: 'text' },
+    'testimonial_author': { text: "Trattoria Zoe, Berlin, Prenzlauer Berg", type: 'text' },
+    'how_heading': { text: "Live in 3 passaggi", type: 'text' },
+    'step1_title': { text: "1. Registrazione", type: 'text' },
+    'step1_desc': { text: "Ottieni accesso gratuito e veloce al tuo noms.", type: 'text' },
+    'step2_title': { text: "2. Configurazione", type: 'text' },
+    'step2_desc': { text: "Elenciamo e ottimizziamo il tuo ristorante.", type: 'text' },
+    'step3_title': { text: "3. Genera entrate", type: 'text' },
+    'step3_desc': { text: "Beneficia immediatamente di ordini senza commissioni.", type: 'text' },
+    'guarantees_heading': { text: "0% rischio. 100% correttezza.", type: 'text' },
+    'guarantee_moneyback': { text: "💰 <strong>Rimborso:</strong> Guadagni meno in 2 mesi? Ti rimborsiamo.", type: 'html' },
+    'guarantee_monthly': { text: "🔁 <strong>Disdetta mensile:</strong> Rimani perché vuoi – non perché devi.", type: 'html' },
+    'guarantee_data': { text: "📥 <strong>I tuoi dati:</strong> Gli ospiti e i contenuti rimangono di tua proprietà.", type: 'html' },
+    'guarantee_referral': { text: "👥 <strong>Referral:</strong> Ogni collega referral = 1 mese gratis.", type: 'html' },
+    'badge_berlin': { text: "Azienda di Berlino", type: 'text' },
+    'badge_dodo': { text: "Rete di consegna premium", type: 'text' },
+    'badge_ssl': { text: "Pagamenti sicuri SSL", type: 'text' },
+    'badge_moneyback': { text: "Garanzia di rimborso di 60 giorni", type: 'text' },
+    'faq_heading': { text: "Domande frequenti", type: 'text' },
+    'faq_q1': { text: "Davvero senza commissioni? Qual è il trucco?", type: 'text' },
+    'faq_a1': { text: "Assolutamente, 0,0%! I ristoranti hanno già abbastanza difficoltà, ed è per questo che abbiamo sviluppato ogni parte del nostro prodotto con un solo obiettivo: aumentare il tuo fatturato!", type: 'text' },
+    'faq_q2': { text: "Utilizzate gli stessi autisti di Wolt, Uber Eats o Lieferando?", type: 'text' },
+    'faq_a2': { text: "No. Lavoriamo con il servizio di consegna premium DoDo (che già consegna per REWE, KFC, Burger King, ecc.) per offrire ai ristoranti un'alta qualità di consegna. Il tuo cibo preparato con amore deve arrivare a casa dei tuoi ospiti appetitoso e attraente.", type: 'text' },
+    'faq_q3': { text: "Ho bisogno di miei autisti?", type: 'text' },
+    'faq_a3': { text: "No. Il nostro partner di consegna DoDo gestisce la consegna a livello nazionale.", type: 'text' },
+    'faq_q4': { text: "Quale impegno contrattuale ho?", type: 'text' },
+    'faq_a4': { text: "Disdetta mensile – senza costi e naturalmente mantieni tutti i dati dei clienti, i modelli e le foto.", type: 'text' },
+    'faq_q5': { text: "Quanto tempo ci vuole per la configurazione?", type: 'text' },
+    'faq_a5': { text: "Di solito, sei online in meno di 24 ore. L'ottimizzazione del tuo Profilo Aziendale Google avviene entro 7 giorni lavorativi.", type: 'text' },
+    'faq_q6': { text: "Come e quando ricevo i miei ricavi?", type: 'text' },
+    'faq_a6': { text: "Immediatamente. Ogni ordine va direttamente a te senza deviazioni. Tutti i pagamenti vanno direttamente sul tuo conto; non tratteniamo alcuna commissione. Ogni pagamento viene elaborato tramite il nostro fornitore di servizi di pagamento sicuro Mollie.", type: 'text' },
+    'secondary_heading': { text: "Risparmia dal primo ordine – inizia ora gratuitamente.", type: 'text' },
+    'secondary-cta': { text: "Mostra potenziale di reddito", type: 'text' },
+    'secondary_note': { text: "100% gratuito • Solo 15 min. • Nessun obbligo", type: 'text' },
+    'footer_text': { text: "© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • 015679 01 10 01", type: 'text' },
+    'premium_network_heading': { text: "La Nostra Rete di Consegna Premium", type: 'text' },
+    'premium_network_p1': { text: "Approfitta di una rete collaudata (<strong>99,1% di successo nelle consegne</strong>) – la stessa su cui fanno affidamento KFC, Burger King e altri.", type: 'html' },
+    'premium_network_p2': { text: "I tuoi piatti arrivano puntuali e appetitosi – garantito.", type: 'text' }
   },
+  'fr': {
+    'hero_heading': { text: "Les plateformes de livraison prennent-elles une bouchée de chaque commande?", type: 'text' },
+    'hero_tagline': { text: "30% de chaque commande en ligne vont aux plateformes de livraison —<br> de l'argent que vous, en tant que propriétaire de restaurant, manquez.<br><strong>noms</strong> vous redonne le contrôle et transforme les commandes coûteuses des plateformes de livraison en clients directs rentables.", type: 'html' },
+    'cta-hero': { text: "Montrer le potentiel de revenus", type: 'text' },
+    'hero_note': { text: "100% gratuit • Seulement 15 min. • Sans obligation", type: 'text' },
+    'network_customers': { text: "Déjà clients de notre réseau de livraison premium exclusif", type: 'text' },
+    'pain_heading': { text: "Pourquoi donnez-vous volontairement chaque 3ème assiette?", type: 'text' },
+    'pain_p1': { text: "Les applications de livraison collectent <strong>des milliers d'euros en commissions</strong> par mois – de l'argent qui <strong>déduit directement de votre profit</strong>.", type: 'html' },
+    'pain_p2': { text: "Avec votre <span class=\"font-bold\">propre système de commande</span>, l'argent reste chez vous.", type: 'html' },
+    'compare_title': { text: "Vos économies par mois", type: 'text' },
+    'th_orders': { text: "Commandes", type: 'text' },
+    'th_commission': { text: "Applications de livraison (30%)", type: 'text' },
+    'th_noms': { text: "Propre système de commande (0%)", type: 'text' },
+    'compare_basis': { text: "Base : Panier moyen 30 €, noms plus frais de service fixes (149 €/mois + 5 €/livraison)", type: 'text' },
+    'calc_heading': { text: "Prêt à augmenter votre profit immédiatement?", type: 'text' },
+    'second-cta': { text: "Montrer le potentiel de revenus", type: 'text' },
+    'feature_heading': { text: "Pourquoi les restaurants aiment noms", type: 'text' },
+    'feature_price_title': { text: "💶 Un prix simple et fixe", type: 'text' },
+    'feature_price_desc': { text: "149 €/mois de frais de base – coûts transparents et prévisibles avec marge complète.", type: 'text' },
+    'feature_delivery_title': { text: "🚚 Livraison à tarif fixe de 5 €", type: 'text' },
+    'feature_delivery_desc': { text: "Indépendamment de la valeur de la commande et disponible dans toute l'Allemagne.", type: 'text' },
+    'feature_data_title': { text: "📊 Données complètes des clients", type: 'text' },
+    'feature_data_desc': { text: "Garantie de propriété des données – vous construisez votre base de clients réguliers, pas la plateforme.", type: 'text' },
+    'feature_marketing_title': { text: "🔄 Marketing automatique", type: 'text' },
+    'feature_marketing_desc': { text: "Les emails segmentés augmentent les commandes répétées jusqu'à 60%.", type: 'text' },
+    'feature_fast_title': { text: "⚡️ En direct en 24 heures", type: 'text' },
+    'feature_fast_desc': { text: "Inscrivez-vous aujourd'hui, commandez demain – intégration ultra-rapide.", type: 'text' },
+    'feature_guarantee_title': { text: "🏆 Garantie de remboursement", type: 'text' },
+    'feature_guarantee_desc': { text: "Si vous gagnez moins en 2 mois que ce que vous payez, nous vous remboursons 100%.", type: 'text' },
+    'testimonial_headline': { text: "Nos clients sont impressionnés", type: 'text'},
+    'testimonial_quote': { text: "\"Avec noms, nos ventes directes en ligne ont plus que doublé, nous économisons des centaines d'euros chaque mois en frais de plateforme et disposons désormais d'un système qui promeut activement notre croissance en ligne. Parce que nous possédons enfin les données des clients, nous pouvons lancer des campagnes ciblées – et les gens reviennent sans cesse. Ces petits ajustements nous ont aidés à faire passer nos ventes hors site au niveau supérieur de manière rentable.\"", type: 'text' },
+    'testimonial_author': { text: "Trattoria Zoe, Berlin, Prenzlauer Berg", type: 'text' },
+    'how_heading': { text: "En direct en 3 étapes", type: 'text' },
+    'step1_title': { text: "1. Inscription", type: 'text' },
+    'step1_desc': { text: "Obtenez un accès gratuit et rapide à votre noms.", type: 'text' },
+    'step2_title': { text: "2. Configuration", type: 'text' },
+    'step2_desc': { text: "Nous répertorions et optimisons votre restaurant.", type: 'text' },
+    'step3_title': { text: "3. Générer des revenus", type: 'text' },
+    'step3_desc': { text: "Bénéficiez immédiatement de commandes sans commission.", type: 'text' },
+    'guarantees_heading': { text: "0% de risque. 100% d'équité.", type: 'text' },
+    'guarantee_moneyback': { text: "💰 <strong>Remboursement:</strong> Gagnez moins en 2 mois ? Nous vous remboursons.", type: 'html' },
+    'guarantee_monthly': { text: "🔁 <strong>Résiliation mensuelle:</strong> Restez parce que vous le voulez – pas parce que vous le devez.", type: 'html' },
+    'guarantee_data': { text: "📥 <strong>Vos données:</strong> Les invités et le contenu restent votre propriété.", type: 'html' },
+    'guarantee_referral': { text: "👥 <strong>Parrainage:</strong> Chaque collègue parrainé = 1 mois gratuit.", type: 'html' },
+    'badge_berlin': { text: "Entreprise berlinoise", type: 'text' },
+    'badge_dodo': { text: "Réseau de livraison premium", type: 'text' },
+    'badge_ssl': { text: "Paiements sécurisés SSL", type: 'text' },
+    'badge_moneyback': { text: "Garantie de remboursement de 60 jours", type: 'text' },
+    'faq_heading': { text: "Questions fréquentes", type: 'text' },
+    'faq_q1': { text: "Vraiment sans commission ? Quel est le piège ?", type: 'text' },
+    'faq_a1': { text: "Absolument, 0,0 % ! Les restaurants ont déjà assez de mal, c'est pourquoi nous avons développé chaque partie de notre produit avec un seul objectif : augmenter vos revenus !", type: 'text' },
+    'faq_q2': { text: "Utilisez-vous les mêmes livreurs que Wolt, Uber Eats ou Lieferando ?", type: 'text' },
+    'faq_a2': { text: "Non. Nous travaillons avec le service de livraison premium DoDo (qui livre déjà pour REWE, KFC, Burger King, etc.) pour offrir aux restaurants une haute qualité de livraison. Votre nourriture préparée avec amour doit arriver chez vos invités appétissante et attrayante.", type: 'text' },
+    'faq_q3': { text: "Ai-je besoin de mes propres livreurs ?", type: 'text' },
+    'faq_a3': { text: "Non. Notre partenaire de livraison DoDo s'occupe de la livraison à l'échelle nationale.", type: 'text' },
+    'faq_q4': { text: "Quel engagement contractuel ai-je ?", type: 'text' },
+    'faq_a4': { text: "Résiliation mensuelle – sans frais et vous conservez naturellement toutes les données clients, modèles et photos.", type: 'text' },
+    'faq_q5': { text: "Combien de temps prend la configuration ?", type: 'text' },
+    'faq_a5': { text: "Habituellement, vous êtes en ligne en moins de 24 heures. L'optimisation de votre profil Google Business a lieu dans les 7 jours ouvrables.", type: 'text' },
+    'faq_q6': { text: "Comment et quand je reçois mes revenus ?", type: 'text' },
+    'faq_a6': { text: "Immédiatement. Chaque commande vous parvient directement sans détours. Tous les paiements vont directement sur votre compte ; nous ne retenons aucune commission. Chaque paiement est traité par notre fournisseur de services de paiement sécurisé Mollie.", type: 'text' },
+    'secondary_heading': { text: "Économisez dès la première commande – commencez maintenant gratuitement.", type: 'text' },
+    'secondary-cta': { text: "Montrer le potentiel de revenus", type: 'text' },
+    'secondary_note': { text: "100% gratuit • Seulement 15 min. • Sans obligation", type: 'text' },
+    'footer_text': { text: "© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • 015679 01 10 01", type: 'text' },
+    'premium_network_heading': { text: "Notre Réseau de Livraison Premium", type: 'text' },
+    'premium_network_p1': { text: "Profitez d'un réseau éprouvé (<strong>99,1% de succès de livraison</strong>) – le même que celui sur lequel comptent KFC, Burger King et autres.", type: 'html' },
+    'premium_network_p2': { text: "Vos plats arrivent à l'heure et appétissants – garanti.", type: 'text' }
+  }
+    };
 
-  it: {
-    hero_heading: 'Più ordini online<br>a condizioni eque',
-    hero_tagline: 'noms rende facile per i ristoratori indaffarati aumentare le vendite online dirette, ridurre i costi di consegna e incentivare ordini ripetuti con campagne email e SMS automatizzate.',
-    'cta-hero': 'Prenota una demo gratuita',
-    hero_note: 'Garanzia soddisfatti o rimborsati • Nessuna carta di credito • Disdici quando vuoi',
-
-    pain_heading: 'Ogni terzo piatto? Sprecato.',
-    pain_p1: 'Le piattaforme di consegna trattengono <strong>30 % di commissione</strong>. Con solo 100 ordini × 50 € sono <strong>1.500 €</strong> al mese.',
-    pain_p2: 'Con il tuo <span class="font-bold">proprio</span> sistema di ordinazione, i soldi restano a te.',
-
-    compare_title: 'Confronto costi / mese',
-    th_orders: 'Ordini',
-    th_commission: '30 % commissione',
-    th_noms: 'Sistema proprio',
-    compare_basis: 'Base: 149 €/mese + 5 €/consegna, scontrino medio 30 €',
-
-    calc_heading: 'Calcola quanto puoi risparmiare con noms',
-    calc_label_orders: 'Quanti ordini da piattaforme ricevi al mese?',
-    calc_label_value: 'Qual è il valore medio approssimativo di ogni ordine?',
-    calcBtn: 'Calcola risparmio',
-
-    premium_network_heading: 'La nostra rete di consegna premium',
-    premium_network_text: 'Oltre alle nostre tariffe imbattibili, approfitta della rete collaudata di DoDo. Consegnano già con affidabilità per <strong>KFC</strong>, <strong>Burger King</strong>, <strong>knuspr.de</strong> e <strong>REWE Group</strong>—con un impressionante <strong>99,1 %</strong> di successo!',
-    premium_network_subtext: 'Affidati a un sistema maturo che recapita i tuoi piatti puntualmente e sorprende i tuoi clienti.',
-
-    badge_berlin: 'Azienda con sede a Berlino',
-    badge_dodo: 'Rete di consegna premium',
-    badge_ssl: 'Pagamenti SSL sicuri',
-    badge_moneyback: 'Garanzia rimborso 60 giorni',
-
-    feature_heading: 'Perché i ristoranti amano noms',
-    feature_price_title: '💶 Prezzo fisso e semplice',
-    feature_price_desc: '149 €/mese di quota base—costi trasparenti con pieno margine.',
-    feature_delivery_title: '🚚 Consegna a tariffa fissa di 5 €',
-    feature_delivery_desc: 'Indipendentemente dal valore dell’ordine e disponibile in tutta la Germania.',
-    feature_data_title: '📊 Dati completi dei clienti',
-    feature_data_desc: 'Garanzia proprietà dati—crei la tua clientela fedele, non la piattaforma.',
-    feature_marketing_title: '🔄 Marketing automatizzato',
-    feature_marketing_desc: 'Le email segmentate aumentano gli ordini ripetuti fino al 60 %.',
-    feature_fast_title: '⚡️ Online in 24 h',
-    feature_fast_desc: 'Registrati oggi, ordini domani—inserimento ultra-veloce.',
-    feature_guarantee_title: '🏆 Garanzia soddisfatti o rimborsati',
-    feature_guarantee_desc: 'Guadagni meno in 2 mesi? Rimborsiamo il 100 %.',
-
-    testimonial_quote: '«I primi ordini tramite noms sono arrivati subito dopo la configurazione—è stato impressionante. Ottimo servizio—noms ci ha convinto!»',
-    testimonial_author: 'Mozzarella & Pomodoro, Berlino',
-
-    how_heading: 'Online in 3 passaggi',
-    step1_title: '1. Registrati',
-    step1_desc: 'Compila il modulo e ottieni accesso al dashboard—nessuna carta di credito richiesta.',
-    step2_title: '2. Appari nell’app',
-    step2_desc: 'Inseriamo il tuo ristorante nella nostra app marketplace e ottimizziamo i tuoi canali digitali.',
-    step3_title: '3. Incassa gli ordini',
-    step3_desc: 'I clienti ordinano, la nostra rete consegna—tu tieni l’intero valore dell’ordine.',
-
-    guarantees_heading: '0 % rischio. 100 % equità.',
-    guarantee_moneyback: '💰 <strong>Rimborso:</strong> Guadagni meno in 2 mesi? Ti rimborsiamo.',
-    guarantee_monthly: '🔁 <strong>Disdetta mensile:</strong> Rimani perché vuoi—non perché devi.',
-    guarantee_data: '📥 <strong>I tuoi dati:</strong> Clienti e contenuti restano tuoi.',
-    guarantee_referral: '👥 <strong>Referenze:</strong> Ogni collega referenziato = 1 mese gratis.',
-
-    faq_heading: 'Domande frequenti',
-    faq_q1: 'Davvero senza commissioni? Dov’è il trucco?',
-    faq_a1: 'Assolutamente 0,0 %! I ristoranti incontrano già molte difficoltà, perciò abbiamo progettato ogni parte del prodotto con un unico obiettivo: aumentare i tuoi ricavi!',
-    faq_q2: 'Usate gli stessi rider di Wolt, Uber Eats o Lieferando?',
-    faq_a2: 'No. Collaboriamo con DoDo (partner di REWE, KFC, Burger King ecc.) per garantire alta qualità di consegna.',
-    faq_q3: 'Ho bisogno dei miei rider?',
-    faq_a3: 'No. Il nostro partner DoDo gestisce la consegna in tutta la nazione.',
-    faq_q4: 'Che impegno contrattuale ho?',
-    faq_a4: 'Disdetta mensile—nessuna tassa e mantieni tutti i dati clienti, modelli e foto.',
-    faq_q5: 'Quanto tempo richiede la configurazione?',
-    faq_a5: 'Di solito meno di 24 h. Ottimizzazione Google Business in 7 giorni lavorativi.',
-    faq_q6: 'Come e quando ricevo i miei ricavi?',
-    faq_a6: 'Immediatamente. Ogni ordine arriva a te—nessuna commissione. Elaborato via mollie.',
-
-    secondary_heading: 'Risparmia dal primo ordine—inizia gratis ora.',
-    secondary_cta: 'Prenota demo gratuita',
-    secondary_note: 'Nessuna carta di credito • Disdici quando vuoi',
-
-    footer_text: '© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • +49 15679 01 10 01'
-  },
-
-  fr: {
-    hero_heading: 'Plus de commandes en ligne<br>à tarifs équitables',
-    hero_tagline: 'noms facilite la vie des restaurateurs occupés en augmentant les ventes directes en ligne, réduisant les coûts de livraison et stimulant les commandes répétées grâce à des campagnes email & SMS automatisées.',
-    'cta-hero': 'Réservez une démo gratuite',
-    hero_note: 'Garantie satisfait ou remboursé • Pas de carte bancaire • Annulez quand vous voulez',
-
-    pain_heading: 'Chaque troisième assiette ? Gaspi.',
-    pain_p1: 'Les plateformes de livraison prélèvent <strong>30 % de commission</strong>. Avec seulement 100 commandes × 50 €, cela fait <strong>1 500 €</strong> par mois.',
-    pain_p2: 'Avec votre <span class="font-bold">propre</span> système de commande, l’argent reste chez vous.',
-
-    compare_title: 'Comparaison des coûts / mois',
-    th_orders: 'Commandes',
-    th_commission: '30 % commission',
-    th_noms: 'Système propre',
-    compare_basis: 'Base : 149 €/mois + 5 €/livraison, panier moyen 30 €',
-
-    calc_heading: 'Calculez combien vous pouvez économiser avec noms',
-    calc_label_orders: 'Combien de commandes via plateformes recevez-vous par mois ?',
-    calc_label_value: 'Quelle est la valeur moyenne approximative d’une commande ?',
-    calcBtn: 'Calculer l’économie',
-
-    premium_network_heading: 'Notre réseau de livraison premium',
-    premium_network_text: 'En plus de nos tarifs imbattables, profitez du réseau éprouvé de DoDo. Ils livrent déjà pour <strong>KFC</strong>, <strong>Burger King</strong>, <strong>knuspr.de</strong> et <strong>REWE Group</strong>—avec un taux de réussite de <strong>99,1 %</strong> !',
-    premium_network_subtext: 'Appuyez-vous sur un système éprouvé pour livrer vos plats à l’heure et ravir vos clients.',
-
-    badge_berlin: 'Entreprise basée à Berlin',
-    badge_dodo: 'Réseau de livraison premium',
-    badge_ssl: 'Paiements SSL sécurisés',
-    badge_moneyback: 'Garantie remboursement 60 jours',
-
-    feature_heading: 'Pourquoi les restaurants adorent noms',
-    feature_price_title: '💶 Un tarif simple et fixe',
-    feature_price_desc: '149 €/mois—coûts transparents, marge complète.',
-    feature_delivery_title: '🚚 Livraison forfaitaire 5 €',
-    feature_delivery_desc: 'Indépendamment du montant et disponible dans toute l’Allemagne.',
-    feature_data_title: '📊 Données clients complètes',
-    feature_data_desc: 'Garantie de propriété des données—vous construisez votre clientèle fidèle, pas la plateforme.',
-    feature_marketing_title: '🔄 Marketing automatisé',
-    feature_marketing_desc: 'Les emails segmentés augmentent les commandes répétées jusqu’à 60 %.',
-    feature_fast_title: '⚡️ En ligne en 24 h',
-    feature_fast_desc: 'Inscrivez-vous aujourd’hui, recevez des commandes demain—intégration ultra-rapide.',
-    feature_guarantee_title: '🏆 Garantie satisfait ou remboursé',
-    feature_guarantee_desc: 'Vous gagnez moins en 2 mois ? Nous remboursons 100 %.',
-
-    testimonial_quote: '«Les premières commandes via noms sont arrivées juste après la mise en place—c’était impressionnant. Super service—noms nous a été très rentable ! »',
-    testimonial_author: 'Mozzarella & Pomodoro, Berlin',
-
-    how_heading: 'En ligne en 3 étapes',
-    step1_title: '1. Inscrivez-vous',
-    step1_desc: 'Remplissez le formulaire et accédez au tableau de bord—pas de carte bancaire.',
-    step2_title: '2. Apparaissez dans l’appli',
-    step2_desc: 'Nous listons votre restaurant sur notre appli marketplace et optimisons vos canaux numériques.',
-    step3_title: '3. Encaissez les commandes',
-    step3_desc: 'Les clients commandent, notre réseau livre—vous conservez la totalité.',
-
-    guarantees_heading: '0 % de risque. 100 % d’équité.',
-    guarantee_moneyback: '💰 <strong>Remboursement :</strong> Vous gagnez moins en 2 mois ? Nous remboursons.',
-    guarantee_monthly: '🔁 <strong>Résiliation mensuelle :</strong> Restez parce que vous le voulez—not parce que vous devez.',
-    guarantee_data: '📥 <strong>Vos données :</strong> Clients et contenus restent votre propriété.',
-    guarantee_referral: '👥 <strong>Parrainage :</strong> Chaque parrainage = 1 mois offert.',
-
-    faq_heading: 'Questions fréquentes',
-    faq_q1: 'Vraiment sans commission ? Où est le piège ?',
-    faq_a1: 'Absolument 0,0 %! Les restaurants ont déjà assez de difficultés, nous avons donc conçu chaque partie avec un seul objectif : augmenter vos revenus !',
-    faq_q2: 'Utilisez-vous les mêmes livreurs que Wolt, Uber Eats ou Lieferando ?',
-    faq_a2: 'Non. Nous collaborons avec DoDo (déjà partenaire REWE, KFC, Burger King) pour garantir qualité de livraison maximale.',
-    faq_q3: 'Ai-je besoin de mes propres livreurs ?',
-    faq_a3: 'Non. DoDo gère la livraison dans tout le pays.',
-    faq_q4: 'Quel engagement contractuel ai-je ?',
-    faq_a4: 'Résiliation mensuelle—pas de frais et vous conservez toutes vos données, modèles et photos.',
-    faq_q5: 'Combien de temps prend la mise en place ?',
-    faq_a5: 'Vous êtes en ligne en moins de 24 h. Optimisation Google Business en 7 jours.',
-    faq_q6: 'Comment et quand reçois-je mes revenus ?',
-    faq_a6: 'Immédiatement. Chaque commande va chez vous—aucune commission. Via mollie.',
-
-    secondary_heading: 'Économisez dès la première commande—commencez gratuitement maintenant.',
-    secondary_cta: 'Réservez une démo gratuite',
-    secondary_note: 'Pas de carte bancaire • Annulez quand vous voulez',
-
-    footer_text: '© 2025 ClickQ & Collect GmbH • christopher@getnoms.app • +49 15679 01 10 01'
-  },
-
-  de: {}  // wird bei Init automatisch befüllt
-};
-
-    /* ---------- 2. Initiale deutschen Texte sichern ---------- */
-    function captureDefaultGerman(){
-      const deDict=translations.de;
-      Object.keys(translations.en).forEach(id=>{
-        const el=document.getElementById(id);
-        if(el){
-          deDict[id]=(el.tagName==='BUTTON'||el.tagName==='A'||el.tagName==='SUMMARY')
-                      ?el.textContent
-                      :el.innerHTML;
+    function setLanguage(lang) {
+      localStorage.setItem('preferredLang', lang);
+      const trans = translations[lang] || translations['en'];
+      document.documentElement.lang = lang;
+      Object.keys(trans).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          if (trans[key].type === 'html') {
+            element.innerHTML = trans[key].text;
+          } else {
+            element.textContent = trans[key].text;
+          }
         }
       });
     }
 
-    /* ---------- 3. Sprache anwenden ---------- */
-    function applyLanguage(lang){
-      if(!translations[lang])lang='de';
-      document.documentElement.lang=lang;
-      localStorage.setItem('lang',lang);
-      document.querySelectorAll('.lang-btn').forEach(btn=>{
-        btn.classList.toggle('active',btn.dataset.lang===lang);
+    document.addEventListener('DOMContentLoaded', () => {
+      const preferredLang = localStorage.getItem('preferredLang') || navigator.language.split('-')[0];
+      setLanguage(preferredLang);
+      const activeButton = document.querySelector(`.lang-btn[data-lang="${preferredLang}"]`);
+      if (activeButton) {
+        activeButton.classList.add('active');
+      } else {
+        setLanguage('de');
+        document.querySelector('.lang-btn[data-lang="de"]').classList.add('active');
+      }
+      document.querySelectorAll('.lang-btn').forEach(button => {
+        button.addEventListener('click', () => {
+          const lang = button.getAttribute('data-lang');
+          setLanguage(lang);
+          document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+        });
       });
-
-      const dict=translations[lang];
-      Object.entries(dict).forEach(([id,txt])=>{
-        const el=document.getElementById(id);
-        if(!el) return;
-        if(el.tagName==='BUTTON'||el.tagName==='A'||el.tagName==='SUMMARY'){
-          el.textContent=txt;
-        }else{
-          el.innerHTML=txt;
-        }
-      });
-    }
-
-    /* ---------- 4. Setup ---------- */
-    document.addEventListener('DOMContentLoaded',()=>{
-      captureDefaultGerman();             // Standardtexte sichern
-      const saved   = localStorage.getItem('lang');
-      const browser = navigator.language.slice(0,2);
-      const initial = saved || browser;   // gespeicherte > Browser > Deutsch
-      if(initial && initial!=='de') applyLanguage(initial);
-
-      document.querySelectorAll('.lang-btn')
-              .forEach(btn=>btn.addEventListener('click',()=>applyLanguage(btn.dataset.lang)));
     });
   </script>
 </body>
